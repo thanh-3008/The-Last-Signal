@@ -17,7 +17,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        Debug.Log("Player take dame" + damage);
+        Debug.Log("Entity take dame" + damage);
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 

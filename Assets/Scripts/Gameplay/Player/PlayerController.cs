@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 
 public class PlayerController : Entity
@@ -19,14 +18,9 @@ public class PlayerController : Entity
     private void Awake()
     {
         Debug.Log("Bat dau game");
-
         base.Awake();
-
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-
-        idleState = new IdleState(this, playerStateMachine, animator);
-        runState = new RunState(this, playerStateMachine, animator);       
+        GetComponent();
+        InitializeStates();
     }
 
     void Start()
@@ -34,25 +28,23 @@ public class PlayerController : Entity
         playerStateMachine.Intialize(idleState);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        MoveX = Input.GetAxisRaw("Horizontal");
-        MoveY = Input.GetAxisRaw("Vertical");
-        playerStateMachine.CurrentState.LogicUpdate();
-        if (Input.GetKeyDown(KeyCode.Space))
+        SetMove();
+        LogicUpdate();
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(1f);
+            TakeDamage(10f);
         }
     }
     private void FixedUpdate()
     {
-        playerStateMachine.CurrentState.PhysicsUpdate();
+        PhysicsUpdate();
     }
 
     protected override void Die()
     {
-        Debug.Log("Player die");
+        GameTimeManager.Instance.SetPlayerDead(true);
     }
 
     public void Move(Vector2 move)
@@ -65,5 +57,28 @@ public class PlayerController : Entity
         rb.linearVelocity = move * moveSpeed;
         MoveX = 0;
         MoveY = 0;
+    }
+    private void SetMove()
+    {
+        MoveX = Input.GetAxisRaw("Horizontal");
+        MoveY = Input.GetAxisRaw("Vertical");
+    }
+    private void LogicUpdate()
+    {
+        playerStateMachine.CurrentState.LogicUpdate();
+    }
+    private void PhysicsUpdate()
+    {
+        playerStateMachine.CurrentState.PhysicsUpdate();
+    }
+    private void GetComponent()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+    private void InitializeStates()
+    {
+        idleState = new IdleState(this, playerStateMachine, animator);
+        runState = new RunState(this, playerStateMachine, animator);
     }
 }
