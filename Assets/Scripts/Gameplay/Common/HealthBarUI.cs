@@ -38,6 +38,6 @@ public class HealthBarUI : MonoBehaviour
 
     private void UpdateHealthBar(float currentHealth, float maxHealth)
     {
-        imageHealthBar.fillAmount = currentHealth / maxHealth;
+        imageHealthBar.fillAmount = currentHealth / maxHealth * 0.9f;
     }
 }
