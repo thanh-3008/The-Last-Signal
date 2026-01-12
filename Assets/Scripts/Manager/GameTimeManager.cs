@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameTimeManager : MonoBehaviour
 {
@@ -26,19 +27,26 @@ public class GameTimeManager : MonoBehaviour
     public void SetPlayerDead(bool isDead)
     {
         isPlayerDead = isDead;
-        CheckTimeScale();
+        StartCheckTimeScale();
     }
 
     // Hàm gọi khi Bật/Tắt Pause menu
     public void SetGamePaused(bool isPaused)
     {
         isGamePaused = isPaused;
-        CheckTimeScale();
+        StartCheckTimeScale();
+    }
+
+    private void StartCheckTimeScale()
+    {
+        StopAllCoroutines();
+        StartCoroutine(CheckTimeScale());
     }
 
     // Hàm logic trung tâm để quyết định TimeScale
-    private void CheckTimeScale()
+    private IEnumerator CheckTimeScale()
     {
+        yield return new WaitForSecondsRealtime(1f);
         // Nếu (Nhân vật chết) HOẶC (Game đang Pause) -> Dừng game
         if (isPlayerDead || isGamePaused)
         {
