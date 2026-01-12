@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Table_Entities_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: cb4273e9807063240ac6c406b47ae0c1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 357004185600
+    m_Localized: Commander Marcus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 547530444800
+    m_Localized: A seasoned veteran. After the ship sank, he was the one who kept
+      the team calm. Marcus focused on standing firm against every wave of enemy
+      attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 661212860416
+    m_Localized: Military commander
+    m_Metadata:
+      m_Items: []
+  - m_Id: 768649957376
+    m_Localized: Iron discipline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4658678173696
+    m_Localized: Miller Engineer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4860881375232
+    m_Localized: Miller is capable of repairing anything from junk. He's not good
+      at fighting, but he knows how to find gold and valuable components from monster
+      carcasses.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4954905088000
+    m_Localized: Mechanical Engineer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5171566055424
+    m_Localized: Scrap metal recycling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5331113185280
+    m_Localized: Pilot Jace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5501905244160
+    m_Localized: A young, energetic pilot, Jace survives thanks to his speed and
+      ability to dodge the monster's attacks by the hair's breadth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5617399599104
+    m_Localized: Supernatural Reflexes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10166378139648
+    m_Localized: Reconnaissance pilot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10323538710528
+    m_Localized: Dr. Aris Thorne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10450542235648
+    m_Localized: She was obsessed with studying the monsters on the Acheron-V. Each
+      time she defeated a creature, she gained experience that allowed her to upgrade
+      her weapons more quickly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10611741921280
+    m_Localized: Biological Analysis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10694952718336
+    m_Localized: Professor of Biology
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10827022962688
+    m_Localized: Jax "The Gunner"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10957885247488
+    m_Localized: Destructive Force
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10940604715008
+    m_Localized: A gunman was stowaway on the ship. He didn't care about rescue;
+      he only cared about shooting at anything that moved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11110021042176
+    m_Localized: Mercenaries
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

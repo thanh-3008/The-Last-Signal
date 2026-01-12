@@ -1,0 +1,24 @@
+using NUnit.Framework;
+using UnityEngine;
+using MyGame.Core.Interface;
+public class BaseState : IState
+{
+    protected PlayerController player;
+    protected PlayerStateMachine playerStateMachine;
+    protected Animator animator;
+
+    public BaseState(PlayerController player, PlayerStateMachine playerStateMachine, Animator animator)
+    {
+        this.player = player;
+        this.playerStateMachine = playerStateMachine;
+        this.animator = animator;
+    }
+
+    public virtual void Enter() { }
+
+    public virtual void Exit() { }
+
+    public virtual void LogicUpdate() { }
+
+    public virtual void PhysicsUpdate() { }
+}

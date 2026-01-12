@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Table_Entities_vi
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: vi
+  m_SharedData: {fileID: 11400000, guid: cb4273e9807063240ac6c406b47ae0c1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 357004185600
+    m_Localized: "Ch\u1EC9 huy Marcus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 547530444800
+    m_Localized: "C\u1EF1u binh d\xE0y d\u1EA1n kinh nghi\u1EC7m. Sau khi t\xE0u
+      r\u01A1i, \xF4ng l\xE0 ng\u01B0\u1EDDi gi\u1EEF b\xECnh t\u0129nh cho c\u1EA3
+      \u0111\u1ED9i. Marcus t\u1EADp trung v\xE0o vi\u1EC7c \u0111\u1EE9ng v\u1EEFng
+      tr\u01B0\u1EDBc m\u1ECDi l\xE0n s\xF3ng k\u1EBB th\xF9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 661212860416
+    m_Localized: "Ch\u1EC9 huy qu\xE2n \u0111\u1ED9i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 768649957376
+    m_Localized: "K\u1EF7 lu\u1EADt th\xE9p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4658678173696
+    m_Localized: "K\u1EF9 s\u01B0 Miller"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4860881375232
+    m_Localized: "C\xF3 kh\u1EA3 n\u0103ng s\u1EEDa ch\u1EEFa m\u1ECDi th\u1EE9 t\u1EEB
+      \u0111\u1ED1ng r\xE1c. Miller kh\xF4ng gi\u1ECFi \u0111\xE1nh nhau nh\u01B0ng
+      anh ta bi\u1EBFt c\xE1ch t\xECm ra v\xE0ng v\xE0 linh ki\u1EC7n qu\xFD gi\xE1
+      t\u1EEB x\xE1c qu\xE1i v\u1EADt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4954905088000
+    m_Localized: "K\u1EF9 s\u01B0 m\xE1y m\xF3c"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5171566055424
+    m_Localized: "T\u1EADn thu ph\u1EBF li\u1EC7u"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5331113185280
+    m_Localized: "Phi c\xF4ng Jace"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5501905244160
+    m_Localized: "M\u1ED9t phi c\xF4ng tr\u1EBB tu\u1ED5i, hi\u1EBFu \u0111\u1ED9ng.
+      Jace s\u1ED1ng s\xF3t nh\u1EDD t\u1ED1c \u0111\u1ED9 v\xE0 kh\u1EA3 n\u0103ng
+      n\xE9 tr\xE1nh nh\u1EEFng c\xFA v\u1ED3 c\u1EE7a qu\xE1i v\u1EADt trong gang
+      t\u1EA5c."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5617399599104
+    m_Localized: "Ph\u1EA3n x\u1EA1 si\xEAu nhi\xEAn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10166378139648
+    m_Localized: "Phi c\xF4ng trinh s\xE1t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10323538710528
+    m_Localized: "Ti\u1EBFn s\u0129 Aris Thorne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10450542235648
+    m_Localized: "B\xE0 b\u1ECB \xE1m \u1EA3nh b\u1EDFi vi\u1EC7c nghi\xEAn c\u1EE9u
+      qu\xE1i v\u1EADt tr\xEAn Acheron-V. M\u1ED7i l\u1EA7n ti\xEAu di\u1EC7t m\u1ED9t
+      sinh v\u1EADt, b\xE0 l\u1EA1i r\xFAt ra \u0111\u01B0\u1EE3c kinh nghi\u1EC7m
+      \u0111\u1EC3 n\xE2ng c\u1EA5p v\u0169 kh\xED nhanh h\u01A1n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10611741921280
+    m_Localized: "Ph\xE2n t\xEDch sinh v\u1EADt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10694952718336
+    m_Localized: "Gi\xE1o s\u01B0 sinh h\u1ECDc"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10827022962688
+    m_Localized: "Jax \"Tay s\xFAng\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10957885247488
+    m_Localized: "S\u1EE9c m\u1EA1nh h\u1EE7y di\u1EC7t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10940604715008
+    m_Localized: "M\u1ED9t tay s\xFAng t\u1EF1 do \u0111i l\u1EADu tr\xEAn t\xE0u.
+      H\u1EAFn kh\xF4ng quan t\xE2m \u0111\u1EBFn c\u1EE9u h\u1ED9, h\u1EAFn ch\u1EC9
+      quan t\xE2m \u0111\u1EBFn vi\u1EC7c x\u1EA3 s\xFAng v\xE0o b\u1EA5t c\u1EE9
+      th\u1EE9 g\xEC di \u0111\u1ED9ng."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11110021042176
+    m_Localized: "L\xEDnh \u0111\xE1nh thu\xEA"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

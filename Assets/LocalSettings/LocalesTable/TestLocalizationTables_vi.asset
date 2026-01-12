@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TestLocalizationTables_vi
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: vi
+  m_SharedData: {fileID: 11400000, guid: dc5eef4449704c24cba210047918d7cc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 228244105957376
+    m_Localized: "\u0110\xF4 r\xEA m\xF4n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228376167813120
+    m_Localized: "Chu\u1ED9t MicKey"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228516584722432
+    m_Localized: "1 ch\xFA m\xE8o m\xE1y \u0111\u1EBFn t\u1EEB t\u01B0\u01A1ng lai"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228682746269696
+    m_Localized: "1 ch\xFA chu\u1ED9t n\u1ED5i ti\u1EBFng t\u1EEB h\xE3ng phim Disney"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
