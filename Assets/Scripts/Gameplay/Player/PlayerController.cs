@@ -14,6 +14,7 @@ public class PlayerController : Entity
     [Header ("State")]
     public IdleState idleState { get; private set; }
     public RunState runState { get; private set; }
+    public DieState dieState { get; private set; }
 
     private void Awake()
     {
@@ -44,7 +45,7 @@ public class PlayerController : Entity
 
     protected override void Die()
     {
-        GameTimeManager.Instance.SetPlayerDead(true);
+        playerStateMachine.ChangeState(dieState);
     }
 
     public void Move(Vector2 move)
@@ -80,5 +81,6 @@ public class PlayerController : Entity
     {
         idleState = new IdleState(this, playerStateMachine, animator);
         runState = new RunState(this, playerStateMachine, animator);
+        dieState = new DieState(this, playerStateMachine, animator);
     }
 }
