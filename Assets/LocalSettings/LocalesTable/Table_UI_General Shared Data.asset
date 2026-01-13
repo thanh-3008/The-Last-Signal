@@ -16,7 +16,15 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: e2708d17e16a6d14fa324b245a980f94
   m_Entries:
   - m_Id: 5981427437568
-    m_Key: New Entry
+    m_Key: UI_Talent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702601928347648
+    m_Key: UI_Profession
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702735441432576
+    m_Key: UI_Stat_Attack
     m_Metadata:
       m_Items: []
   m_Metadata:

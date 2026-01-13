@@ -9,4 +9,6 @@ public class EntityData : ScriptableObject
     public float moveSpeed;
 
     public float armor;
+
+    public float dameBase;
 }

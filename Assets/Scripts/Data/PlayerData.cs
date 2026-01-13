@@ -21,8 +21,8 @@ public class PlayerData : EntityData
 
     public float expGain;
 
-    public float goldGain;
+    public float coinGain;
 
-    public float PickupRange;
+    public float pickupRange;
 
 }
