@@ -10,54 +10,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8449aba54847c04cb04c296df028cca, type: 3}
-  m_Name: NewPlayerData
+  m_Name: Jax
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   entityName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 10827022962688
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  maxHealth: 0
-  moveSpeed: 0
-  armor: 0
-  dameBase: 0
+  maxHealth: 80
+  moveSpeed: 5.5
+  armor: 12
+  dameBase: 50
   avatarCharacter: {fileID: 0}
   descriptionCharacter:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 10940604715008
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   talentCharacter:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 10957885247488
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   classCharacter:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 11110021042176
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  critChance: 0
-  critDame: 0
-  expGain: 0
-  coldGain: 0
-  pickupRange: 0
+  critChance: 25
+  critDame: 250
+  expGain: 1
+  coinGain: 0.8
+  pickupRange: 5
   references:
     version: 2
     RefIds: []

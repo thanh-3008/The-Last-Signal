@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: "Ngh\u1EC1 nghi\u1EC7p"
     m_Metadata:
       m_Items: []
+  - m_Id: 702735441432576
+    m_Localized: "Ti\u1EBFng Anh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 764947308711936
+    m_Localized: "Ti\u1EBFng Vi\u1EC7t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 769727015915520
+    m_Localized: "Quay l\u1EA1i"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

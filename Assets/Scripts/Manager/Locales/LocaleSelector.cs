@@ -7,8 +7,6 @@ public class LocalSelector : MonoBehaviour
 {
     private bool active = false;
 
-    
-    private TestLocalization testLocalization;
     private void Start()
     {
         int currentLocaleId = PlayerPrefs.GetInt("localeId", 0);

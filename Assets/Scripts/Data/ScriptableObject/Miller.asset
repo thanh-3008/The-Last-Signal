@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8449aba54847c04cb04c296df028cca, type: 3}
+  m_Name: Miller
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  entityName:
+    m_TableReference:
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
+    m_TableEntryReference:
+      m_KeyId: 4658678173696
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  maxHealth: 120
+  moveSpeed: 4.8
+  armor: 10
+  dameBase: 22
+  avatarCharacter: {fileID: 0}
+  descriptionCharacter:
+    m_TableReference:
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
+    m_TableEntryReference:
+      m_KeyId: 4860881375232
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  talentCharacter:
+    m_TableReference:
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
+    m_TableEntryReference:
+      m_KeyId: 5171566055424
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  classCharacter:
+    m_TableReference:
+      m_TableCollectionName: GUID:cb4273e9807063240ac6c406b47ae0c1
+    m_TableEntryReference:
+      m_KeyId: 4954905088000
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  critChance: 5
+  critDame: 150
+  expGain: 1.1
+  coinGain: 0
+  pickupRange: 12
+  references:
+    version: 2
+    RefIds: []
