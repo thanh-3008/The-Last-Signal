@@ -6,10 +6,8 @@ public class LocaleChangeUI : MonoBehaviour
 {
     public LocalizedString eng;
     public LocalizedString viet;
-    public LocalizedString back;
     public TextMeshProUGUI textEnglish;
     public TextMeshProUGUI textVietNamese;
-    public TextMeshProUGUI backMenu;
     private void Start()
     {
         UpdateLocale();
@@ -18,7 +16,6 @@ public class LocaleChangeUI : MonoBehaviour
     {
         textEnglish.text = eng.GetLocalizedString();
         textVietNamese.text = viet.GetLocalizedString();
-        backMenu.text = back.GetLocalizedString();
     }
     private void OnEnable()
     {
