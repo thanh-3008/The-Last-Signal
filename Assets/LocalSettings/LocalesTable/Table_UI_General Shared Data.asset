@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: Back_UI
     m_Metadata:
       m_Items: []
+  - m_Id: 777117421506560
+    m_Key: Change_Locale_UI
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
