@@ -24,7 +24,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 702735441432576
-    m_Key: UI_Stat_Attack
+    m_Key: Local_English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 764947308711936
+    m_Key: Local_VietNam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 769727015915520
+    m_Key: Back_UI
     m_Metadata:
       m_Items: []
   m_Metadata:

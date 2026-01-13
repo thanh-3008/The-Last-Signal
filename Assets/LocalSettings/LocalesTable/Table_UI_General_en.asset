@@ -27,7 +27,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 702735441432576
-    m_Localized: 
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 764947308711936
+    m_Localized: Vietnamese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 769727015915520
+    m_Localized: Back
     m_Metadata:
       m_Items: []
   references:

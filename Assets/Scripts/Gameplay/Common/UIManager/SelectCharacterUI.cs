@@ -39,7 +39,7 @@ public class SelectCharacterUI : MonoBehaviour
         textCritChance.text = playerDatas[currentCharacterIndex].critChance.ToString();
         textCritDame.text = playerDatas[currentCharacterIndex].critDame.ToString();
         textExpGain.text = playerDatas[currentCharacterIndex].expGain.ToString();
-        textCoinGain.text = playerDatas[currentCharacterIndex].coldGain.ToString();
+        textCoinGain.text = playerDatas[currentCharacterIndex].coinGain.ToString();
     }
     private void OnEnable()
     {
@@ -55,7 +55,7 @@ public class SelectCharacterUI : MonoBehaviour
         DisplayTextUI();
     }
 
-    private void NextCharacter()
+    public void NextCharacter()
     {
         currentCharacterIndex += 1;
         if(currentCharacterIndex>playerDatas.Count-1)
@@ -65,7 +65,7 @@ public class SelectCharacterUI : MonoBehaviour
         PlayerPrefs.SetInt("index", currentCharacterIndex);
         DisplayTextUI();
     }
-    private void PreviousCharacter()
+    public void PreviousCharacter()
     {
         currentCharacterIndex -= 1;
         if(currentCharacterIndex<0)
