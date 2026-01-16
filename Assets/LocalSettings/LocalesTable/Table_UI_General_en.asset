@@ -42,6 +42,42 @@ MonoBehaviour:
     m_Localized: Change Language
     m_Metadata:
       m_Items: []
+  - m_Id: 1018691657109504
+    m_Localized: Raw power. Weapons calculate their lethality from this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018799945650176
+    m_Localized: Movement velocity. Crucial for outrunning the swarm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018767599177728
+    m_Localized: Reduces damage from alien strikes. Makes you harder to kill.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018733881167872
+    m_Localized: Survival limit. When it hits zero, your mission ends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018838336114688
+    m_Localized: Luck under pressure. Chance to deal massive lethal hits.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018875480870912
+    m_Localized: Lethality multiplier for critical strikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018901854654464
+    m_Localized: Resource scavenging efficiency. Get more coin for upgrades.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018941247557632
+    m_Localized: Adaptation speed. Learn and evolve faster in battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1065766142840832
+    m_Localized: Select
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

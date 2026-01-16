@@ -3,6 +3,10 @@ using UnityEngine.EventSystems;
 public class StatHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject tooltipUI;
+    private void Awake()
+    {
+        tooltipUI.SetActive(false);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         tooltipUI.SetActive(true);

@@ -39,6 +39,42 @@ MonoBehaviour:
     m_Key: Change_Locale_UI
     m_Metadata:
       m_Items: []
+  - m_Id: 1018691657109504
+    m_Key: Des_Stat_Dame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018733881167872
+    m_Key: Des_Stat_Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018767599177728
+    m_Key: Des_Stat_Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018799945650176
+    m_Key: Des_Stat_Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018838336114688
+    m_Key: Des_Stat_CritChance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018875480870912
+    m_Key: Des_Stat_CritDame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018901854654464
+    m_Key: Des_Stat_CoinGain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1018941247557632
+    m_Key: Des_Stat_ExpGain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1065766142840832
+    m_Key: select_UI_Button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

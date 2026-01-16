@@ -7,6 +7,10 @@ public class PlayerData : EntityData
     [Header("Player Info")] 
     public Sprite avatarCharacter;
 
+    public RuntimeAnimatorController animatorIdle;
+
+    public GameObject prefabCharacter;
+
     public LocalizedString descriptionCharacter;
 
     public LocalizedString talentCharacter;
