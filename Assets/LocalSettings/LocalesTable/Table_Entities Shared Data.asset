@@ -95,6 +95,26 @@ MonoBehaviour:
     m_Key: Char_Class_Jax
     m_Metadata:
       m_Items: []
+  - m_Id: 1373061523410944
+    m_Key: Weapon_Name_CHAINSPARK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1373192213729280
+    m_Key: Weapon_Name_PULSEFLARE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1373298916823040
+    m_Key: Weapon_Name_STORMBRAND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1373432698343424
+    m_Key: Weapon_Name_IONBARRAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1373566513418240
+    m_Key: Weapon_Name_CATACLYSMCORE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

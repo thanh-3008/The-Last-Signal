@@ -76,6 +76,9 @@ public class PlayerController : Entity
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        GameObject stateMachine = GameObject.FindWithTag("PlayerStateMachine");
+        playerStateMachine = stateMachine.GetComponent<PlayerStateMachine>();
+        
     }
     private void InitializeStates()
     {

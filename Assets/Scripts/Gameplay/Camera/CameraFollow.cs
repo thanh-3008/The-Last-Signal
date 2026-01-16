@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
     [Header("Smooth Settings")]
     [SerializeField] private float smoothTime = 0.1f; // Thời gian trễ (càng nhỏ càng bám sát)
     private Vector3 currentVelocity = Vector3.zero;
-    private void Awake()
+    private void Start()
     {
         if(target==null)
         {

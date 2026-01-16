@@ -1,15 +1,15 @@
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
-using static UnityEditor.ShaderData;
 public class SettingManager : MonoBehaviour
 {
     public LocalizedString changeLanguage;
     public LocalizedString back;
     public TextMeshProUGUI textChangeLanguge;
     public TextMeshProUGUI textBack;
+    public LocalizedString selectButton;
+    public TextMeshProUGUI selectButtonText;
 
     public GameObject panelSetting;
     public GameObject panelLocaleChange;
@@ -19,11 +19,8 @@ public class SettingManager : MonoBehaviour
     private void Awake()
     {
         SetAllPanelSettingHide();
-    }
-    void Start()
-    {
         UpdateDisplay();
-    }
+    }    
 
     private void Update()
     {
@@ -84,5 +81,6 @@ public class SettingManager : MonoBehaviour
     {
         textChangeLanguge.text = changeLanguage.GetLocalizedString();
         textBack.text = back.GetLocalizedString();
+        selectButtonText.text = selectButton.GetLocalizedString();
     }
 }
