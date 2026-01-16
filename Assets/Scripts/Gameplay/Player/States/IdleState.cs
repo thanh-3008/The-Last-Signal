@@ -1,9 +1,9 @@
 using UnityEngine;
 using MyGame.Core.Interface;
-public class IdleState : BaseState
+public class IdleState : BaseStatePlayer
 {
 
-    public IdleState(PlayerController player, PlayerStateMachine playerStateMachine, Animator animator) : base(player, playerStateMachine, animator){}
+    public IdleState(PlayerController player, FiniteStateMachine playerStateMachine, Animator animator) : base(player, playerStateMachine, animator){}
 
 
     public override void Enter()

@@ -1,13 +1,13 @@
 using NUnit.Framework;
 using UnityEngine;
 using MyGame.Core.Interface;
-public class BaseState : IState
+public class BaseStatePlayer : IState
 {
     protected PlayerController player;
-    protected PlayerStateMachine playerStateMachine;
+    protected FiniteStateMachine playerStateMachine;
     protected Animator animator;
 
-    public BaseState(PlayerController player, PlayerStateMachine playerStateMachine, Animator animator)
+    public BaseStatePlayer(PlayerController player, FiniteStateMachine playerStateMachine, Animator animator)
     {
         this.player = player;
         this.playerStateMachine = playerStateMachine;

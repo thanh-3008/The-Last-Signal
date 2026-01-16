@@ -5,7 +5,7 @@ public class PlayerController : Entity
     public float MoveX { get; private set; }
     public float MoveY { get; private set; }
 
-    public PlayerStateMachine playerStateMachine;
+    public FiniteStateMachine finiteStateMachine;
 
     public Animator animator { get; private set; }
 
@@ -26,11 +26,12 @@ public class PlayerController : Entity
 
     void Start()
     {
-        playerStateMachine.Intialize(idleState);
+        finiteStateMachine.Intialize(idleState);
     }
 
     void Update()
     {
+        if (finiteStateMachine.CurrentState == dieState) return;
         SetMove();
         LogicUpdate();
         if(Input.GetKeyDown(KeyCode.Space))
@@ -45,7 +46,7 @@ public class PlayerController : Entity
 
     protected override void Die()
     {
-        playerStateMachine.ChangeState(dieState);
+        finiteStateMachine.ChangeState(dieState);
     }
 
     public void Move(Vector2 move)
@@ -66,24 +67,22 @@ public class PlayerController : Entity
     }
     private void LogicUpdate()
     {
-        playerStateMachine.CurrentState.LogicUpdate();
+        finiteStateMachine.CurrentState.LogicUpdate();
     }
     private void PhysicsUpdate()
     {
-        playerStateMachine.CurrentState.PhysicsUpdate();
+        finiteStateMachine.CurrentState.PhysicsUpdate();
     }
     private void GetComponent()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        GameObject stateMachine = GameObject.FindWithTag("PlayerStateMachine");
-        playerStateMachine = stateMachine.GetComponent<PlayerStateMachine>();
-        
+        animator = GetComponent<Animator>(); 
     }
     private void InitializeStates()
     {
-        idleState = new IdleState(this, playerStateMachine, animator);
-        runState = new RunState(this, playerStateMachine, animator);
-        dieState = new DieState(this, playerStateMachine, animator);
+        finiteStateMachine = new FiniteStateMachine();
+        idleState = new IdleState(this, finiteStateMachine, animator);
+        runState = new RunState(this, finiteStateMachine, animator);
+        dieState = new DieState(this, finiteStateMachine, animator);       
     }
 }
