@@ -1,9 +1,9 @@
 ﻿using MyGame.Core.Interface;
 using UnityEngine;
 
-public class RunState : BaseState
+public class RunState : BaseStatePlayer
 {
-    public RunState(PlayerController player,PlayerStateMachine playerStateMachine,Animator animator) : base(player, playerStateMachine, animator) { }
+    public RunState(PlayerController player,FiniteStateMachine playerStateMachine,Animator animator) : base(player, playerStateMachine, animator) { }
     public override void Enter()
     {       
         Debug.Log("Trang thai di chuyen");

@@ -1,12 +1,18 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DieState : BaseState
+public class DieState : BaseStatePlayer
 {
-    public DieState(PlayerController player, PlayerStateMachine playerStateMachine, Animator animator) : base(player, playerStateMachine, animator)
+    public DieState(PlayerController player, FiniteStateMachine playerStateMachine, Animator animator) : base(player, playerStateMachine, animator)
     {
     }
     public override void Enter()
     {
+        // Dừng mọi chuyển động vật lý ngay lập tức
+        player.rb.linearVelocity = Vector2.zero;
+
+        // Reset các biến đầu vào để animator không bị nhầm lẫn
+        animator.SetFloat("RunX", 0);
+        animator.SetFloat("RunY", 0);
         animator.Play("die");
         GameTimeManager.Instance.SetPlayerDead(true);
     }

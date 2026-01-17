@@ -7,24 +7,17 @@ public class HealthBarUI : MonoBehaviour
 
     public Image imageHealthBar;
 
-    private void Awake()
+    private void Start()
     {
         GameObject obj = GameObject.FindWithTag("Player");
         if(obj!= null)
         {
             targetEntity = obj.GetComponent<PlayerController>();
+            targetEntity.OnHealthChanged += UpdateHealthBar;
         }
         else
         {
             Debug.Log("Không tìm thấy enity");
-        }
-    }
-
-    private void OnEnable()
-    {
-        if (targetEntity != null)
-        {
-            targetEntity.OnHealthChanged += UpdateHealthBar;
         }
     }
 
