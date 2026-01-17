@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Entity
 {
     [SerializeField]
     private FiniteStateMachine finiteStateMachine;
@@ -42,7 +42,6 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();     
     }
-
     private void IntiaInitializeStates()
     {
         finiteStateMachine = new FiniteStateMachine();
@@ -74,5 +73,10 @@ public class EnemyController : MonoBehaviour
         if (data == null) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, data.attackRange);
+    }
+
+    protected override void Die()
+    {
+        ObjectPooler.Instance.ReturnToPool("Mushroom", this.gameObject);
     }
 }

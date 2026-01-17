@@ -25,7 +25,7 @@ MonoBehaviour:
   moveSpeed: 3
   armor: 10
   dameBase: 10
-  attackRange: 0.4
+  attackRange: 0.8
   attackCooldown: 2
   prefabEnemy: {fileID: 0}
   references:
