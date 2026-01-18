@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1608652289919817350}
   - component: {fileID: 6579450971240588711}
   - component: {fileID: -8172359882158286960}
+  - component: {fileID: 8282300231000041493}
+  - component: {fileID: -5086608053106859567}
   m_Layer: 0
   m_Name: Jax
   m_TagString: Player
@@ -33,7 +35,8 @@ Transform:
   m_LocalPosition: {x: 0.16685, y: -1.07005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3034625671162508245}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4040156738891021420
@@ -132,6 +135,7 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 0
   rb: {fileID: 0}
+  firePoint: {fileID: 2118687748469912121}
 --- !u!50 &6579450971240588711
 Rigidbody2D:
   serializedVersion: 5
@@ -240,3 +244,61 @@ PolygonCollider2D:
       - {x: -0.22, y: -1.04}
       - {x: 0.21, y: -1.04}
   m_UseDelaunayMesh: 0
+--- !u!114 &8282300231000041493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575501561469864457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3726af541751c364a814352bce1ce075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponEquipment
+  weaponDatabase: {fileID: 11400000, guid: 3fead1f39a59a5f4aa334ed998655675, type: 2}
+  currentWeapon: {fileID: 0}
+  timeShoot: 0
+--- !u!114 &-5086608053106859567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575501561469864457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9416dd6c10f61449c8638da61bb206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NearestEnemyFinder
+--- !u!1 &2118687748469912121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3034625671162508245}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3034625671162508245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118687748469912121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.05, y: -0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4424126689748053073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

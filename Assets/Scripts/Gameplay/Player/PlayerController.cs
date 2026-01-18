@@ -11,6 +11,8 @@ public class PlayerController : Entity
 
     public Rigidbody2D rb;
 
+    public GameObject firePoint;
+
     [Header ("State")]
     public IdleState idleState { get; private set; }
     public RunState runState { get; private set; }

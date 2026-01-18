@@ -21,10 +21,12 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  weaponTag: chainspark
   weaponImage: {fileID: 0}
   weaponQuality: 0
-  weaponAnimator: {fileID: 0}
-  DamedamageMultiplier: 1
+  prefabBullet: {fileID: 7017443338247188502, guid: b722acff87fda1a4d8fca9eae3f9eb17,
+    type: 3}
+  damageMultiplier: 0
   weaponDes:
     m_TableReference:
       m_TableCollectionName: 
@@ -34,7 +36,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  attackSpeed: 0.6
+  fireRate: 0.8
   moveSpeed: 9
   references:
     version: 2

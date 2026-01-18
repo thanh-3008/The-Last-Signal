@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NUnit;
+using UnityEngine;
 
 public class EnemyController : Entity
 {
@@ -15,6 +16,7 @@ public class EnemyController : Entity
     public EnemyAttackState enemyAttackState;
     public EnemyChaseState enemyChaseState;
     public EnemyIdleState enemyIdleState;
+    public EnemyDieState enemyDieState;
 
     private void Awake()
     {
@@ -42,12 +44,14 @@ public class EnemyController : Entity
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();     
     }
+    
     private void IntiaInitializeStates()
     {
         finiteStateMachine = new FiniteStateMachine();
         enemyIdleState = new EnemyIdleState(finiteStateMachine, this, animator);
         enemyAttackState = new EnemyAttackState(finiteStateMachine, this, animator);
-        enemyChaseState = new EnemyChaseState(finiteStateMachine, this, animator);       
+        enemyChaseState = new EnemyChaseState(finiteStateMachine, this, animator);
+        enemyDieState = new EnemyDieState(finiteStateMachine, this, animator);
     }
 
     public void OnAttackHit()
@@ -77,6 +81,6 @@ public class EnemyController : Entity
 
     protected override void Die()
     {
-        ObjectPooler.Instance.ReturnToPool("Mushroom", this.gameObject);
+        finiteStateMachine.ChangeState(enemyDieState);
     }
 }

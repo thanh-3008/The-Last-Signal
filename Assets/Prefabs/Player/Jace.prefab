@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7751445786036144694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2693911441019358961}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2693911441019358961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751445786036144694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -0.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6257629475137585119}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8516625077922489150
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +45,8 @@ GameObject:
   - component: {fileID: 1344833147736294522}
   - component: {fileID: 2342774259683573432}
   - component: {fileID: 1535004422302849204}
+  - component: {fileID: 702203854789151236}
+  - component: {fileID: 2187706094614020381}
   m_Layer: 0
   m_Name: Jace
   m_TagString: Player
@@ -33,7 +66,8 @@ Transform:
   m_LocalPosition: {x: -4.99, y: -1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2693911441019358961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1032444434340061529
@@ -109,8 +143,8 @@ MonoBehaviour:
   moveSpeed: 5
   maxHealth: 100
   currentHealth: 0
-  finiteStateMachine: {fileID: 0}
   rb: {fileID: 1344833147736294522}
+  firePoint: {fileID: 7751445786036144694}
 --- !u!50 &1344833147736294522
 Rigidbody2D:
   serializedVersion: 5
@@ -241,3 +275,30 @@ PolygonCollider2D:
       - {x: -0.22, y: -1.04}
       - {x: 0.21, y: -1.04}
   m_UseDelaunayMesh: 0
+--- !u!114 &702203854789151236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516625077922489150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3726af541751c364a814352bce1ce075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponEquipment
+  weaponDatabase: {fileID: 11400000, guid: 3fead1f39a59a5f4aa334ed998655675, type: 2}
+  currentWeapon: {fileID: 0}
+  timeShoot: 0
+--- !u!114 &2187706094614020381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516625077922489150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9416dd6c10f61449c8638da61bb206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NearestEnemyFinder

@@ -8,4 +8,6 @@ public class EnemyData : EntityData
     public float attackCooldown;
 
     public GameObject prefabEnemy;
+
+    public string enemyTag;
 }

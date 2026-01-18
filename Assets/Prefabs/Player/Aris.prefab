@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2011439572242720945}
   - component: {fileID: 1891952354829778976}
   - component: {fileID: 7393679517216479290}
+  - component: {fileID: -1967163328958540195}
+  - component: {fileID: 746565835512242255}
   m_Layer: 0
   m_Name: Aris
   m_TagString: Player
@@ -33,7 +35,8 @@ Transform:
   m_LocalPosition: {x: 0.16685, y: -1.07005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7472008058838343860}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3100623957052585219
@@ -132,6 +135,7 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 0
   rb: {fileID: 0}
+  firePoint: {fileID: 6665076989789296729}
 --- !u!50 &1891952354829778976
 Rigidbody2D:
   serializedVersion: 5
@@ -240,3 +244,61 @@ PolygonCollider2D:
       - {x: -0.22, y: -1.04}
       - {x: 0.21, y: -1.04}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1967163328958540195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344956894126384264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3726af541751c364a814352bce1ce075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponEquipment
+  weaponDatabase: {fileID: 11400000, guid: 3fead1f39a59a5f4aa334ed998655675, type: 2}
+  currentWeapon: {fileID: 0}
+  timeShoot: 0
+--- !u!114 &746565835512242255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344956894126384264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9416dd6c10f61449c8638da61bb206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NearestEnemyFinder
+--- !u!1 &6665076989789296729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7472008058838343860}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7472008058838343860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6665076989789296729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03, y: -0.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8346328641987449687}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

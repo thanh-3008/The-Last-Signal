@@ -1,4 +1,5 @@
 using NUnit;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -6,6 +7,11 @@ public class EnemySpawner : MonoBehaviour
     public Transform player;
     public float spawnRadius = 10f;
     public float timeSpawn=2f;
+    public List<EnemyData> enemies;
+    private void Awake()
+    {
+        CreateObjectFromBool();
+    }
     private void Start()
     {
         GameObject playerObj = GameObject.FindWithTag("Player");
@@ -20,7 +26,13 @@ public class EnemySpawner : MonoBehaviour
             timeSpawn = 2f;
         }
     }
-
+    private void CreateObjectFromBool()
+    {
+        for(int i=0;i<enemies.Count;i++)
+        {
+            ObjectPooler.Instance.InitializePool(enemies[i].enemyTag, enemies[i].prefabEnemy, 20);
+        }
+    }
     public void SpawnEnemy()
     {
         float angle = Random.Range(0f, 360f);
@@ -30,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
         ) * spawnRadius;
 
         Vector3 finalPos = player.position + (Vector3)spawnPos;
-        GameObject enemyObj =ObjectPooler.Instance.SpawnFromPool("Mushroom", finalPos, Quaternion.identity);
+        GameObject enemyObj = ObjectPooler.Instance.SpawnFromPool(enemies[0].enemyTag, finalPos, Quaternion.identity);
         enemyObj.GetComponent<EnemyController>().currentHealth = enemyObj.GetComponent<EnemyController>().data.maxHealth;
     }
     public void OnDrawGizmosSelected()
