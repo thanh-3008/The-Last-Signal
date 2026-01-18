@@ -7,17 +7,19 @@ public class WeaponData : ScriptableObject
 {
     public LocalizedString weaponName;
 
+    public string weaponTag;
+
     public Image weaponImage;
 
     public WeaponQuality weaponQuality;
 
-    public RuntimeAnimatorController weaponAnimator;
+    public GameObject prefabBullet;
 
-    public float DamedamageMultiplier;
+    public float damageMultiplier;
 
     public LocalizedString weaponDes;
 
-    public float attackSpeed;
+    public float fireRate;
 
     public float moveSpeed;
 }

@@ -21,10 +21,12 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  weaponTag: cataclysmcore
   weaponImage: {fileID: 0}
   weaponQuality: 3
-  weaponAnimator: {fileID: 0}
-  DamedamageMultiplier: 4
+  prefabBullet: {fileID: 7206218074600551205, guid: c079244f3346b134d9793cd782d9510e,
+    type: 3}
+  damageMultiplier: 0
   weaponDes:
     m_TableReference:
       m_TableCollectionName: 
@@ -34,7 +36,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  attackSpeed: 2
+  fireRate: 1.5
   moveSpeed: 4.5
   references:
     version: 2

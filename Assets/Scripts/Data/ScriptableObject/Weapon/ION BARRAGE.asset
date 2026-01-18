@@ -21,10 +21,12 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  weaponTag: ionbarrage
   weaponImage: {fileID: 0}
   weaponQuality: 2
-  weaponAnimator: {fileID: 0}
-  DamedamageMultiplier: 1.5
+  prefabBullet: {fileID: 5597502553018929730, guid: 8522190646907dd459810a63312804de,
+    type: 3}
+  damageMultiplier: 0
   weaponDes:
     m_TableReference:
       m_TableCollectionName: 
@@ -34,7 +36,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  attackSpeed: 1.4
+  fireRate: 1.4
   moveSpeed: 6
   references:
     version: 2

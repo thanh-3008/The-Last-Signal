@@ -21,10 +21,12 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  weaponTag: pulseflare
   weaponImage: {fileID: 0}
   weaponQuality: 1
-  weaponAnimator: {fileID: 0}
-  DamedamageMultiplier: 0.5
+  prefabBullet: {fileID: 7046153070730474274, guid: 704bb319096603548b5c3dd3f87ad289,
+    type: 3}
+  damageMultiplier: 0
   weaponDes:
     m_TableReference:
       m_TableCollectionName: 
@@ -34,7 +36,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  attackSpeed: 0.9
+  fireRate: 0.9
   moveSpeed: 6.5
   references:
     version: 2

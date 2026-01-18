@@ -21,10 +21,12 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  weaponTag: stormbrand
   weaponImage: {fileID: 0}
   weaponQuality: 1
-  weaponAnimator: {fileID: 0}
-  DamedamageMultiplier: 1.2
+  prefabBullet: {fileID: 2636403146564560112, guid: 9484d0f414c1df94e80835f17ae187ee,
+    type: 3}
+  damageMultiplier: 0
   weaponDes:
     m_TableReference:
       m_TableCollectionName: 
@@ -34,7 +36,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  attackSpeed: 1.1
+  fireRate: 1.1
   moveSpeed: 12
   references:
     version: 2

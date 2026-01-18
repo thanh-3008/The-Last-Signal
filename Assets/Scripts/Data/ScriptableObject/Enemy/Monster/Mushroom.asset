@@ -27,7 +27,9 @@ MonoBehaviour:
   dameBase: 10
   attackRange: 0.8
   attackCooldown: 2
-  prefabEnemy: {fileID: 0}
+  prefabEnemy: {fileID: 44598555773644409, guid: 24ffe5a45fc951645a83baf938614fbd,
+    type: 3}
+  enemyTag: Mushroom
   references:
     version: 2
     RefIds: []

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NearestEnemyFinder : MonoBehaviour
 {
-    protected GameObject FindNearestEnemy(Transform currentTransform)
+    public GameObject FindNearestEnemy(Transform currentTransform)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Monster");
 
