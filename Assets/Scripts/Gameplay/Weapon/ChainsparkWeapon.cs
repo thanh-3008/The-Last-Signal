@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CHAINSPARK : WeaponBase
 {
-    int bounceCount = 0;
+    public int bounceCount = 0;
     int bounceCountMax = 3;
     List<GameObject> hitEnemies = new List<GameObject>();
 
     protected override void Start()
     {
-        base.GetComponent();
+        base.LoadComponents();
         ResetChain();
     }
     protected override void OnEnable()
@@ -49,7 +49,7 @@ public class CHAINSPARK : WeaponBase
             if (!hitEnemies.Contains(enemy))
             {
                 EnemyController enemyController = enemy.GetComponent<EnemyController>();
-                enemyController.TakeDamage(enemyController.data.dameBase);
+                enemyController.TakeDamage(player.data.dameBase);
                 
                 hitEnemies.Add(enemy);
                 if (bounceCount < bounceCountMax)
@@ -69,7 +69,8 @@ public class CHAINSPARK : WeaponBase
     private void BounceToNextEnemy(Transform currentTarget)
     {
         bounceCount++;
-        GameObject nextEnemy = nearestEnemyFinder.FindNearestEnemy(currentTarget);
+
+        GameObject nextEnemy = EnemyManager.Instance.GetNearestEnemy(currentTarget.position,hitEnemies);
         if (nextEnemy != null && !hitEnemies.Contains(nextEnemy))
         {
             // Cập nhật lại hướng bay mới về phía kẻ địch tiếp theo
@@ -78,7 +79,8 @@ public class CHAINSPARK : WeaponBase
         else
         {
             // Không tìm thấy mục tiêu mới hoặc mục tiêu đã trúng rồi
-            gameObject.SetActive(false);
+            Debug.Log("Muc tieu da trung dan nay roi");
+            ObjectPooler.Instance.ReturnToPool(data.weaponTag, gameObject);
         }
     }
 }

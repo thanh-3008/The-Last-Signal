@@ -11,7 +11,7 @@ public class WeaponBase : MonoBehaviour
     private float timeDestroy = 0f;
     protected virtual void Start()
     {
-        GetComponent();
+        LoadComponents();
     }
 
     protected virtual void Update()
@@ -21,8 +21,8 @@ public class WeaponBase : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        // Gọi GetComponent để đảm bảo đã có tham chiếu tới player và finder
-        GetComponent();
+        // Gọi LoadComponent để đảm bảo đã có tham chiếu tới player và finder
+        LoadComponents();
 
         if (player != null)
         {
@@ -54,13 +54,13 @@ public class WeaponBase : MonoBehaviour
         }
         return direction;
     }
-    protected virtual void GetComponent() 
+    protected virtual void LoadComponents() 
     {
         GameObject playerObj = GameObject.FindWithTag("Player");
         if (playerObj != null)
         {
             player = playerObj.GetComponent<PlayerController>();
-            // Lấy Finder từ Player thay vì tự GetComponent trên viên đạn
+            // Lấy Finder từ Player thay vì tự LoadComponent trên viên đạn
             nearestEnemyFinder = playerObj.GetComponent<NearestEnemyFinder>();
         }
     }

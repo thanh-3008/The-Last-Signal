@@ -6710,7 +6710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   player: {fileID: 0}
   spawnRadius: 20
-  timeSpawn: 1
+  timeSpawn: 3
+  time: 2
   enemies:
   - {fileID: 11400000, guid: 45c9dc45a453db94dbaecada3bf19347, type: 2}
 --- !u!1 &978615275

@@ -1,3 +1,5 @@
+﻿using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : Entity
@@ -6,6 +8,10 @@ public class PlayerController : Entity
     public float MoveY { get; private set; }
 
     public FiniteStateMachine finiteStateMachine;
+
+    [SerializeField]
+    private PlayerData playerData;
+    public PlayerData data => playerData;
 
     public Animator animator { get; private set; }
 
@@ -21,9 +27,14 @@ public class PlayerController : Entity
     private void Awake()
     {
         Debug.Log("Bat dau game");
-        base.Awake();
-        GetComponent();
+        LoadComponents();
         InitializeStates();
+    }
+
+    protected override void OnEnable()
+    {
+        LoadData();
+        base.OnEnable();
     }
 
     void Start()
@@ -33,13 +44,9 @@ public class PlayerController : Entity
 
     void Update()
     {
-        if (finiteStateMachine.CurrentState == dieState) return;
+        if (finiteStateMachine.CurrentState == dieState) { MoveX = 0;MoveY = 0; }
         SetMove();
         LogicUpdate();
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10f);
-        }
     }
     private void FixedUpdate()
     {
@@ -53,12 +60,12 @@ public class PlayerController : Entity
 
     public void Move(Vector2 move)
     {
-        rb.linearVelocity = move.normalized * moveSpeed;
+        rb.linearVelocity = move.normalized * data.moveSpeed;
     }
     
     public void Idle(Vector2 move)
     {
-        rb.linearVelocity = move * moveSpeed;
+        rb.linearVelocity = move * data.moveSpeed;
         MoveX = 0;
         MoveY = 0;
     }
@@ -75,7 +82,7 @@ public class PlayerController : Entity
     {
         finiteStateMachine.CurrentState.PhysicsUpdate();
     }
-    private void GetComponent()
+    private void LoadComponents()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>(); 
@@ -86,5 +93,10 @@ public class PlayerController : Entity
         idleState = new IdleState(this, finiteStateMachine, animator);
         runState = new RunState(this, finiteStateMachine, animator);
         dieState = new DieState(this, finiteStateMachine, animator);       
+    }
+    private void LoadData()
+    {
+        maxHealth = data.maxHealth;
+        armor = data.armor;
     }
 }
