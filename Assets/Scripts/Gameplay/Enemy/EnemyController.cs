@@ -12,7 +12,7 @@ public class EnemyController : Entity
 
     public Rigidbody2D rb { get; private set; }
     public Animator animator { get; private set; }
-    public PlayerController playerController {get;private set;}
+    public PlayerController playerController { get; private set; }
 
     public event Action<GameObject> OnGameObjectDeath;
     [Header("State")]
@@ -23,43 +23,98 @@ public class EnemyController : Entity
 
     private void Awake()
     {
-        LoadComponent();       
+        // 1. Load basic components
+        LoadComponent();
+
+        // 2. Load data values
+        LoadData();
+
+        // 3. Initialize state objects (FSM and states) so they exist before Start
+        InitializeStates();
     }
-    void Start()
+
+    private void Start()
     {
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        playerController = playerObj.GetComponent<PlayerController>();
-        IntiaInitializeStates();
-        finiteStateMachine.Intialize(enemyIdleState);
-        EnemyManager.Instance.RegisterEnemy(this);
+        // 4. Find player (may be created in other Awake methods)
+        FindPlayer();       
     }
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        finiteStateMachine.CurrentState.LogicUpdate();
+        if (finiteStateMachine != null && finiteStateMachine.CurrentState != null)
+        {
+            finiteStateMachine.CurrentState.LogicUpdate();
+        }
     }
+
     protected override void OnEnable()
     {
-        maxHealth = data.maxHealth;
-        armor = data.armor;
-        base.OnEnable();        
+        // ensure HP/armor set when enabled
+        LoadData();
+        base.OnEnable();
+        if (finiteStateMachine != null && enemyIdleState != null)
+        {
+            finiteStateMachine.Intialize(enemyIdleState);
+        }
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.RegisterEnemy(this);
+        }
     }
+
     protected void OnDisable()
     {
-        EnemyManager.Instance.UnregisterEnemy(this);
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.UnregisterEnemy(this);
+        }
     }
+
     private void FixedUpdate()
     {
-        finiteStateMachine.CurrentState.PhysicsUpdate();
+        if (finiteStateMachine != null && finiteStateMachine.CurrentState != null)
+        {
+            finiteStateMachine.CurrentState.PhysicsUpdate();
+        }
     }
+
     private void LoadComponent()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();     
+        if (rb == null)
+        {
+            Debug.LogError($"EnemyController: Rigidbody2D missing on {gameObject.name}");
+        }
+
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError($"EnemyController: Animator missing on {gameObject.name}");
+        }
     }
-    
-    private void IntiaInitializeStates()
+
+    private void LoadData()
     {
+        if (enemyData == null)
+        {
+            Debug.LogError($"EnemyController: enemyData not assigned on {gameObject.name}");
+            return;
+        }
+
+        maxHealth = enemyData.maxHealth;
+        currentHealth = maxHealth;
+        armor = enemyData.armor;
+    }
+
+    private void InitializeStates()
+    {
+        if (animator == null)
+        {
+            // Can't initialize states without animator
+            return;
+        }
+
         finiteStateMachine = new FiniteStateMachine();
         enemyIdleState = new EnemyIdleState(finiteStateMachine, this, animator);
         enemyAttackState = new EnemyAttackState(finiteStateMachine, this, animator);
@@ -67,34 +122,52 @@ public class EnemyController : Entity
         enemyDieState = new EnemyDieState(finiteStateMachine, this, animator);
     }
 
+    private void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj == null) return;
+        playerController = playerObj.GetComponent<PlayerController>();
+    }
+
     public void OnAttackHit()
     {
         if (playerController == null) return;
+        if (enemyData == null) return;
+
         float distance = Vector2.Distance(playerController.transform.position, transform.position);
-        if (distance <= data.attackRange)
+        if (distance <= enemyData.attackRange)
         {
-            Debug.Log("Player an dame" + data.dameBase);
-            playerController.TakeDamage(data.dameBase);
+            Debug.Log("Player an dame" + enemyData.dameBase);
+            playerController.TakeDamage(enemyData.dameBase);
         }
-        else { Debug.Log("Player đã né"); }
-        ;
+        else
+        {
+            Debug.Log("Player đã né");
+        }
     }
 
     public void AttackFinished()
     {
-        enemyAttackState.isFinishAttack = true;
+        if (enemyAttackState != null)
+        {
+            enemyAttackState.isFinishAttack = true;
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (data == null) return;
+        if (enemyData == null) return;
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, data.attackRange);
+        Gizmos.DrawWireSphere(transform.position, enemyData.attackRange);
     }
 
     protected override void Die()
     {
-        finiteStateMachine.ChangeState(enemyDieState);
+        if (finiteStateMachine != null && enemyDieState != null)
+        {
+            finiteStateMachine.ChangeState(enemyDieState);
+        }
+
         OnGameObjectDeath?.Invoke(gameObject);
     }
 }
