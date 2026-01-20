@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public Transform player;
-    public float spawnRadius = 10f;
-    public float timeSpawn=2f;
+    public float spawnRadius;
+    public float timeSpawn;
+    public float time = 2f;
     public List<EnemyData> enemies;
     private void Awake()
     {
@@ -19,11 +20,11 @@ public class EnemySpawner : MonoBehaviour
     }
     private void Update()
     {
-        timeSpawn -= Time.deltaTime;
-        if(timeSpawn<=0)
+        time -= Time.deltaTime;
+        if(time<=0)
         {
             SpawnEnemy();
-            timeSpawn = 2f;
+            time = timeSpawn;
         }
     }
     private void CreateObjectFromBool()

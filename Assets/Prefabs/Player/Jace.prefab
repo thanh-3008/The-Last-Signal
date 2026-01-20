@@ -140,9 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0d008db8f135c4285ecaf78a05899d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
   maxHealth: 100
   currentHealth: 0
+  armor: 0
+  playerData: {fileID: 11400000, guid: 2c392af700b30454fb2d08ae08ee3cd0, type: 2}
   rb: {fileID: 1344833147736294522}
   firePoint: {fileID: 7751445786036144694}
 --- !u!50 &1344833147736294522

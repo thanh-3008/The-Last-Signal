@@ -1,4 +1,5 @@
 ﻿using NUnit;
+using System;
 using UnityEngine;
 
 public class EnemyController : Entity
@@ -12,6 +13,8 @@ public class EnemyController : Entity
     public Rigidbody2D rb { get; private set; }
     public Animator animator { get; private set; }
     public PlayerController playerController {get;private set;}
+
+    public event Action<GameObject> OnGameObjectDeath;
     [Header("State")]
     public EnemyAttackState enemyAttackState;
     public EnemyChaseState enemyChaseState;
@@ -20,7 +23,7 @@ public class EnemyController : Entity
 
     private void Awake()
     {
-        GetComponent();       
+        LoadComponent();       
     }
     void Start()
     {
@@ -28,18 +31,28 @@ public class EnemyController : Entity
         playerController = playerObj.GetComponent<PlayerController>();
         IntiaInitializeStates();
         finiteStateMachine.Intialize(enemyIdleState);
+        EnemyManager.Instance.RegisterEnemy(this);
     }
-
     // Update is called once per frame
     void Update()
     {
         finiteStateMachine.CurrentState.LogicUpdate();
     }
+    protected override void OnEnable()
+    {
+        maxHealth = data.maxHealth;
+        armor = data.armor;
+        base.OnEnable();        
+    }
+    protected void OnDisable()
+    {
+        EnemyManager.Instance.UnregisterEnemy(this);
+    }
     private void FixedUpdate()
     {
         finiteStateMachine.CurrentState.PhysicsUpdate();
     }
-    private void GetComponent()
+    private void LoadComponent()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();     
@@ -82,5 +95,6 @@ public class EnemyController : Entity
     protected override void Die()
     {
         finiteStateMachine.ChangeState(enemyDieState);
+        OnGameObjectDeath?.Invoke(gameObject);
     }
 }

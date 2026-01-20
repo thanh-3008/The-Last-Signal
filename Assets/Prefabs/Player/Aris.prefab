@@ -131,10 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0d008db8f135c4285ecaf78a05899d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
   maxHealth: 25
   currentHealth: 0
-  rb: {fileID: 0}
+  armor: 0
+  playerData: {fileID: 11400000, guid: 36d8d8e724a0e2c48a3d40b816ef570c, type: 2}
+  rb: {fileID: 1891952354829778976}
   firePoint: {fileID: 6665076989789296729}
 --- !u!50 &1891952354829778976
 Rigidbody2D:
