@@ -9,9 +9,16 @@ public class WeaponBase : MonoBehaviour
     protected Vector2 direction;
     protected PlayerController player;
     private float timeDestroy = 0f;
-    protected virtual void Start()
+
+    // Ensure components are loaded early in Awake
+    protected virtual void Awake()
     {
         LoadComponents();
+    }
+
+    protected virtual void Start()
+    {
+        // Kept for derived classes to override. Core LoadComponents moved to Awake.
     }
 
     protected virtual void Update()
@@ -21,7 +28,7 @@ public class WeaponBase : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        // Gọi LoadComponent để đảm bảo đã có tham chiếu tới player và finder
+        // Ensure references are present when object is enabled (pooled objects)
         LoadComponents();
 
         if (player != null)
@@ -43,6 +50,12 @@ public class WeaponBase : MonoBehaviour
 
     protected virtual Vector2 FindEnemyNearestDirection(Transform transform)
     {
+        if (nearestEnemyFinder == null)
+        {
+            direction = Random.insideUnitCircle.normalized;
+            return direction;
+        }
+
         GameObject targetObj = nearestEnemyFinder.FindNearestEnemy(transform);
         if (targetObj == null)
         {
@@ -54,7 +67,7 @@ public class WeaponBase : MonoBehaviour
         }
         return direction;
     }
-    protected virtual void LoadComponents() 
+    protected virtual void LoadComponents()
     {
         GameObject playerObj = GameObject.FindWithTag("Player");
         if (playerObj != null)

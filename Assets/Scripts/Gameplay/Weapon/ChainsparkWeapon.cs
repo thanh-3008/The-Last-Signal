@@ -5,29 +5,40 @@ using UnityEngine;
 public class CHAINSPARK : WeaponBase
 {
     public int bounceCount = 0;
-    int bounceCountMax = 3;
+    int bounceCountMax = 30;
     List<GameObject> hitEnemies = new List<GameObject>();
+
+    protected override void Awake()
+    {
+        base.Awake();
+        ResetChain();
+    }
 
     protected override void Start()
     {
-        base.LoadComponents();
+        base.Start();
+        // ensure chain is reset when starting
         ResetChain();
     }
+
     protected override void OnEnable()
     {
         base.OnEnable();
         ResetChain();
     }
+
     protected virtual void Update()
     {
         base.Update();
         BulletMove();
     }
+
     private void ResetChain()
     {
         bounceCount = 0;
         hitEnemies.Clear();
     }
+
     protected void BulletMove()
     {
         // Di chuyển đạn theo hướng hiện tại
@@ -41,16 +52,20 @@ public class CHAINSPARK : WeaponBase
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Monster"))
+        if (collision.CompareTag("Monster"))
         {
             GameObject enemy = collision.gameObject;
             if (!hitEnemies.Contains(enemy))
             {
                 EnemyController enemyController = enemy.GetComponent<EnemyController>();
-                enemyController.TakeDamage(player.data.dameBase);
-                
+                if (enemyController != null && player != null)
+                {
+                    enemyController.TakeDamage(player.data.dameBase);
+                }
+
                 hitEnemies.Add(enemy);
                 if (bounceCount < bounceCountMax)
                 {
@@ -70,7 +85,7 @@ public class CHAINSPARK : WeaponBase
     {
         bounceCount++;
 
-        GameObject nextEnemy = EnemyManager.Instance.GetNearestEnemy(currentTarget.position,hitEnemies);
+        GameObject nextEnemy = EnemyManager.Instance.GetNearestEnemy(currentTarget.position, hitEnemies);
         if (nextEnemy != null && !hitEnemies.Contains(nextEnemy))
         {
             // Cập nhật lại hướng bay mới về phía kẻ địch tiếp theo
@@ -79,7 +94,7 @@ public class CHAINSPARK : WeaponBase
         else
         {
             // Không tìm thấy mục tiêu mới hoặc mục tiêu đã trúng rồi
-            Debug.Log("Muc tieu da trung dan nay roi");
+            Debug.Log("Muc tieu da trung dan nay hoac ko co muc tieu");
             ObjectPooler.Instance.ReturnToPool(data.weaponTag, gameObject);
         }
     }
