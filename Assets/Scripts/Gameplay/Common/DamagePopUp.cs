@@ -19,6 +19,8 @@ public class DamagePopup : MonoBehaviour
     {
         textMesh.SetText(damageAmount.ToString());
 
+        transform.localScale = Vector3.one;
+
         if (!isCriticalHit)
         {
             textMesh.fontSize = 5;
@@ -69,7 +71,7 @@ public class DamagePopup : MonoBehaviour
 
             if (textColor.a < 0)
             {
-                Destroy(gameObject); // Hủy object khi đã mờ hết
+                ObjectPooler.Instance.ReturnToPool(DamagePopupManager.Instance.tag, gameObject);
             }
         }
     }
