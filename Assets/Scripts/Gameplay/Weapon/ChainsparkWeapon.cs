@@ -63,7 +63,9 @@ public class CHAINSPARK : WeaponBase
                 EnemyController enemyController = enemy.GetComponent<EnemyController>();
                 if (enemyController != null && player != null)
                 {
-                    enemyController.TakeDamage(player.data.dameBase);
+                    enemyController.TakeDamage(GetDameRaw());
+                    int finalDamage = Mathf.RoundToInt(enemyController.GetFinalDamage(GetDameRaw()));
+                    DamagePopupManager.Instance.Create(enemy.transform.position, finalDamage, isCritical);              
                 }
 
                 hitEnemies.Add(enemy);
