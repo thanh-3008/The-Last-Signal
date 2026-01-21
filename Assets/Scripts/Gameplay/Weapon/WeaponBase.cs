@@ -9,7 +9,8 @@ public class WeaponBase : MonoBehaviour
     protected Vector2 direction;
     protected PlayerController player;
     private float timeDestroy = 0f;
-
+    protected float dameFinal;
+    protected bool isCritical;
     // Ensure components are loaded early in Awake
     protected virtual void Awake()
     {
@@ -75,6 +76,27 @@ public class WeaponBase : MonoBehaviour
             player = playerObj.GetComponent<PlayerController>();
             // Lấy Finder từ Player thay vì tự LoadComponent trên viên đạn
             nearestEnemyFinder = playerObj.GetComponent<NearestEnemyFinder>();
+        }
+    }
+
+    protected virtual float GetDameRaw()
+    {
+        isCritical = false;
+
+        float damage = player.data.dameBase * data.damageMultiplier;
+
+        int randomValue = Random.Range(0,101);
+        if (randomValue < player.data.critChance)
+        {
+            isCritical = true;
+            damage = (damage * player.data.critDame) / 100;
+            Debug.Log("Crit dame cua nhan vat la" + player.data.critDame);
+            return damage;
+        }
+        else
+        {
+            Debug.Log("dame cua nhan vat la" + damage);
+            return damage;
         }
     }
 }

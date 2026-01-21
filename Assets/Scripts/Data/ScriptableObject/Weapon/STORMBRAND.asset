@@ -26,7 +26,7 @@ MonoBehaviour:
   weaponQuality: 1
   prefabBullet: {fileID: 2636403146564560112, guid: 9484d0f414c1df94e80835f17ae187ee,
     type: 3}
-  damageMultiplier: 0
+  damageMultiplier: 1.2
   weaponDes:
     m_TableReference:
       m_TableCollectionName: 
