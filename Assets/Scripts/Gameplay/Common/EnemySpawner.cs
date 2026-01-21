@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRadius;
     public float timeSpawn;
     public float time = 2f;
+    public int numberOfMonster;
     public List<EnemyData> enemies;
 
     private void Awake()
@@ -60,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemies[i] != null)
             {
-                ObjectPooler.Instance.InitializePool(enemies[i].enemyTag, enemies[i].prefabEnemy, 50);
+                ObjectPooler.Instance.InitializePool(enemies[i].enemyTag, enemies[i].prefabEnemy, numberOfMonster);
             }
         }
     }
