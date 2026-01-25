@@ -27,7 +27,7 @@ public class CHAINSPARK : WeaponBase
         ResetChain();
     }
 
-    protected virtual void Update()
+    protected override void Update()
     {
         base.Update();
         BulletMove();

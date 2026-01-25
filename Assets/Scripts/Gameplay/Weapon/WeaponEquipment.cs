@@ -1,5 +1,4 @@
-﻿using Unity.Jobs;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponEquipment : MonoBehaviour
 {
@@ -10,22 +9,49 @@ public class WeaponEquipment : MonoBehaviour
 
     private PlayerController player;
 
-    public float timeShoot=0f;
+    public float timeShoot = 0f;
+
+    private void Awake()
+    {
+        // Get player from PlayerManager as early as possible
+        if (PlayerManager.Instance != null)
+        {
+            player = PlayerManager.Instance.Player;
+        }
+    }
+
     private void Start()
     {
-        player = gameObject.GetComponent<PlayerController>();
+        // Fallback if PlayerManager not available
+        if (player == null)
+        {
+            player = gameObject.GetComponent<PlayerController>();
+        }
+
+        if (player == null)
+        {
+            Debug.LogError("WeaponEquipment: PlayerController not found!");
+            return;
+        }
+
         EquipWeapon();
-        ObjectPooler.Instance.InitializePool(currentWeapon.weaponTag, currentWeapon.prefabBullet, 20);
+        if (currentWeapon != null)
+        {
+            ObjectPooler.Instance.InitializePool(currentWeapon.weaponTag, currentWeapon.prefabBullet, 20);
+        }
     }
 
     private void Update()
     {
         HandleShooting();
     }
+
     private void HandleShooting()
     {
+        if (player == null || currentWeapon == null) return;
+
         timeShoot += Time.deltaTime;
-        if(timeShoot>currentWeapon.fireRate)
+        if (timeShoot > currentWeapon.fireRate)
         {
             Shoot();
             timeShoot = 0f;
@@ -34,11 +60,17 @@ public class WeaponEquipment : MonoBehaviour
 
     private void Shoot()
     {
+        if (player == null)
+        {
+            Debug.LogWarning("WeaponEquipment: Player is null, cannot shoot.");
+            return;
+        }
 
         Debug.Log("thuc hien ban dan");
 
         // 1. Tìm kẻ địch gần nhất từ vị trí Player để xác định hướng ban đầu
-        GameObject target = player.GetComponent<NearestEnemyFinder>().FindNearestEnemy(player.transform);
+        NearestEnemyFinder finder = player.GetComponent<NearestEnemyFinder>();
+        GameObject target = finder != null ? finder.FindNearestEnemy(player.transform) : null;
 
         Quaternion spawnRotation = Quaternion.identity;
 
@@ -49,16 +81,26 @@ public class WeaponEquipment : MonoBehaviour
             spawnRotation = Quaternion.Euler(0, 0, angle);
         }
 
-        ObjectPooler.Instance.SpawnFromPool(currentWeapon.weaponTag, player.firePoint.transform.position, spawnRotation);
-   
+        if (ObjectPooler.Instance != null && currentWeapon != null)
+        {
+            ObjectPooler.Instance.SpawnFromPool(currentWeapon.weaponTag, player.firePoint.transform.position, spawnRotation);
+        }
     }
 
-    public void EquipWeapon() 
+    public void EquipWeapon()
     {
+        if (weaponDatabase == null)
+        {
+            Debug.LogError("WeaponEquipment: WeaponDatabase not assigned!");
+            return;
+        }
+
         int currentWeaponIndex = PlayerPrefs.GetInt("WeaponIndex", 0);
+        WeaponData weapon = weaponDatabase.GetWeapon(currentWeaponIndex);
 
-        if (currentWeapon == weaponDatabase.GetWeapon(currentWeaponIndex)) return;
+        if (weapon == null) return;
+        if (currentWeapon == weapon) return;
 
-        currentWeapon = weaponDatabase.GetWeapon(currentWeaponIndex);
+        currentWeapon = weapon;
     }
 }
