@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : Entity
 {
@@ -11,6 +9,7 @@ public class PlayerController : Entity
 
     [SerializeField]
     private PlayerData playerData;
+    private PlayerData runtimeData;
     public PlayerData data => playerData;
 
     public Animator animator { get; private set; }
@@ -29,6 +28,7 @@ public class PlayerController : Entity
         Debug.Log("Bat dau game");
         LoadComponents();
         InitializeStates();
+        ResetData();
     }
 
     protected override void OnEnable()
@@ -98,5 +98,9 @@ public class PlayerController : Entity
     {
         maxHealth = data.maxHealth;
         armor = data.armor;
+    }
+    private void ResetData()
+    {
+        runtimeData = Instantiate(playerData);
     }
 }

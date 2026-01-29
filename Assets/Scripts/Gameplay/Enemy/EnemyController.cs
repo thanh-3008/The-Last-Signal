@@ -35,8 +35,22 @@ public class EnemyController : Entity
 
     private void Start()
     {
-        // 4. Find player (may be created in other Awake methods)
-        FindPlayer();       
+        // 4. Get player reference from PlayerManager (already cached there)
+        if (PlayerManager.Instance != null)
+        {
+            playerController = PlayerManager.Instance.Player;
+        }
+
+        // 5. Set initial state and register with manager
+        if (finiteStateMachine != null && enemyIdleState != null)
+        {
+            finiteStateMachine.Intialize(enemyIdleState);
+        }
+
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.RegisterEnemy(this);
+        }
     }
 
     // Update is called once per frame
@@ -53,14 +67,6 @@ public class EnemyController : Entity
         // ensure HP/armor set when enabled
         LoadData();
         base.OnEnable();
-        if (finiteStateMachine != null && enemyIdleState != null)
-        {
-            finiteStateMachine.Intialize(enemyIdleState);
-        }
-        if (EnemyManager.Instance != null)
-        {
-            EnemyManager.Instance.RegisterEnemy(this);
-        }
     }
 
     protected void OnDisable()
@@ -120,13 +126,6 @@ public class EnemyController : Entity
         enemyAttackState = new EnemyAttackState(finiteStateMachine, this, animator);
         enemyChaseState = new EnemyChaseState(finiteStateMachine, this, animator);
         enemyDieState = new EnemyDieState(finiteStateMachine, this, animator);
-    }
-
-    private void FindPlayer()
-    {
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        if (playerObj == null) return;
-        playerController = playerObj.GetComponent<PlayerController>();
     }
 
     public void OnAttackHit()

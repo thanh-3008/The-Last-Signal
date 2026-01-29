@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class CHAINSPARK : WeaponBase
@@ -27,7 +26,7 @@ public class CHAINSPARK : WeaponBase
         ResetChain();
     }
 
-    protected virtual void Update()
+    protected override void Update()
     {
         base.Update();
         BulletMove();

@@ -8,7 +8,6 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRadius;
     public float timeSpawn;
     public float time = 2f;
-    public int numberOfMonster;
     public List<EnemyData> enemies;
 
     private void Awake()
@@ -16,24 +15,28 @@ public class EnemySpawner : MonoBehaviour
         // Ensure object pools are created early
         CreateObjectFromBool();
 
-        // Try find player reference early
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        if (playerObj != null)
+        // Get player reference from PlayerManager
+        if (PlayerManager.Instance != null && PlayerManager.Instance.HasPlayer())
         {
-            player = playerObj.transform;
+            player = PlayerManager.Instance.Player.transform;
         }
     }
 
     private void Start()
     {
-        // If player not found in Awake, try again in Start
+        // If player not found in Awake, try again in Start (fallback)
+        if (player == null && PlayerManager.Instance != null)
+        {
+            PlayerController pc = PlayerManager.Instance.GetPlayer();
+            if (pc != null)
+            {
+                player = pc.transform;
+            }
+        }
+
         if (player == null)
         {
-            GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null)
-            {
-                player = playerObj.transform;
-            }
+            Debug.LogWarning("EnemySpawner: Player not found in Start.");
         }
     }
 
@@ -61,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemies[i] != null)
             {
-                ObjectPooler.Instance.InitializePool(enemies[i].enemyTag, enemies[i].prefabEnemy, numberOfMonster);
+                ObjectPooler.Instance.InitializePool(enemies[i].enemyTag, enemies[i].prefabEnemy, 20);
             }
         }
     }
