@@ -30,7 +30,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  imgUpgrade: {fileID: 0}
+  imgUpgrade: {fileID: -8140245965472925413, guid: a747ccc26d86a2a45843334edfede059,
+    type: 3}
   UltimateUpgrade: {fileID: 0}
   type: 0
   expGain: 0
