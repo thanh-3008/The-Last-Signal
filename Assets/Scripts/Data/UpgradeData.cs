@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Localization;
-using UnityEngine.UI;
 public abstract class UpgradeData : ScriptableObject
 {
     public LocalizedString nameUpgrade;
     public LocalizedString desUpgrade;
-    public Image imgUpgrade;
+    public Sprite imgUpgrade;
     protected PlayerController player;
     public UpgradeData UltimateUpgrade;
     public enum UpgradeType

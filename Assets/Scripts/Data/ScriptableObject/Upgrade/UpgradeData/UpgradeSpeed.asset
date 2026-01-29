@@ -31,8 +31,9 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   imgUpgrade: {fileID: 0}
+  UltimateUpgrade: {fileID: 0}
   type: 0
-  speed: 0
+  speed: 0.3
   references:
     version: 2
     RefIds: []
