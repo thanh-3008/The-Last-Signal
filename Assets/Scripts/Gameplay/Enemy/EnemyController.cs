@@ -67,6 +67,11 @@ public class EnemyController : Entity
         // ensure HP/armor set when enabled
         LoadData();
         base.OnEnable();
+        if (finiteStateMachine != null && enemyIdleState != null)
+        {
+            finiteStateMachine.Intialize(enemyIdleState);
+        }
+
     }
 
     protected void OnDisable()

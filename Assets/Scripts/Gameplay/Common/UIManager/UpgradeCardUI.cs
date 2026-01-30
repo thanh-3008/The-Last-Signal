@@ -23,44 +23,46 @@ public class UpgradeCardUI : MonoBehaviour
 
     public void SetUp(List<UpgradeData> upgradeDatas)
     {
-        // Xử lý Panel 1
         SetPanelData(panel1, textName1, textDes1, image1, upgradeDatas[0]);
-
-        // Xử lý Panel 2
         SetPanelData(panel2, textName2, textDes2, image2, upgradeDatas[1]);
-
-        // Xử lý Panel 3
         SetPanelData(panel3, textName3, textDes3, image3, upgradeDatas[2]);
     }
 
-    // Tạo một hàm phụ để tránh lặp lại code (DRY - Don't Repeat Yourself)
     private void SetPanelData(GameObject panel, TextMeshProUGUI nameTxt, TextMeshProUGUI desTxt, Image iconImg, UpgradeData data)
     {
-        nameTxt.text = data.nameUpgrade.GetLocalizedString();
-        desTxt.text = data.desUpgrade.GetLocalizedString();
+        // Kiểm tra để tránh lỗi ArgumentException: Empty Table Reference
+        nameTxt.text = (data.nameUpgrade != null && !data.nameUpgrade.IsEmpty) ? data.nameUpgrade.GetLocalizedString() : "No Name";
+        desTxt.text = (data.desUpgrade != null && !data.desUpgrade.IsEmpty) ? data.desUpgrade.GetLocalizedString() : "No Description";
+
         iconImg.sprite = data.imgUpgrade;
 
-        // Lấy component Image của Panel để đổi màu nền
         Image panelBg = panel.GetComponent<Image>();
+        string hexColor = "#FFFFFF"; // Mặc định là trắng
 
+        // Chọn mã Hex dựa trên loại Upgrade
         switch (data.type)
         {
             case UpgradeData.UpgradeType.StatModifier:
-                panelBg.color = Color.blue;
+                hexColor = "#84A7F7CE";
                 break;
             case UpgradeData.UpgradeType.Ability:
-                panelBg.color = Color.yellow;
+                hexColor = "#E8CD32CE";
                 break;
             case UpgradeData.UpgradeType.Consumable:
-                panelBg.color = Color.green;
+                hexColor = "#85D540CE";
                 break;
             case UpgradeData.UpgradeType.UltimateUpgrade:
-                panelBg.color = Color.magenta; 
+                hexColor = "#9D22B4CE";
                 break;
             default:
-                panelBg.color = Color.white;
+                hexColor = "#FFFFFF";
                 break;
+        }
+
+        // Chuyển mã Hex thành Color và gán cho panel
+        if (ColorUtility.TryParseHtmlString(hexColor, out Color customColor))
+        {
+            panelBg.color = customColor;
         }
     }
 }
-

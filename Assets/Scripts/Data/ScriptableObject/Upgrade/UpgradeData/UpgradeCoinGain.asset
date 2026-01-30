@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCoinGainData
   nameUpgrade:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:420403c358b9c6e4ea45e96a448f7958
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6795142197121024
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   desUpgrade:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:420403c358b9c6e4ea45e96a448f7958
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6798859524870144
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

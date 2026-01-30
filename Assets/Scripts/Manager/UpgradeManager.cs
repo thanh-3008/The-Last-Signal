@@ -9,7 +9,7 @@ public class UpgradeManager : MonoBehaviour
     public List<UpgradeData> allUpgrades;
     public UpgradeCardUI upgradeUI; // Kéo thả Script UI vào đây
     public GameObject upgradePanel;
-
+    public Dictionary<UpgradeData, int> ownedUpgrades = new Dictionary<UpgradeData, int>();
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -18,6 +18,10 @@ public class UpgradeManager : MonoBehaviour
             return;
         }
         Instance = this;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L)) { { ShowUpgradeSelection(); } }
     }
 
     // Hàm logic chính để lấy và hiển thị 3 upgrade
@@ -44,7 +48,14 @@ public class UpgradeManager : MonoBehaviour
         // Logic khi người dùng chọn 1 card
         Debug.Log("Đã chọn: " + upgrade.nameUpgrade.GetLocalizedString());
 
-        // Thực hiện logic cộng chỉ số hoặc thêm skill ở đây...
+        if (ownedUpgrades.ContainsKey(upgrade))
+        {
+            upgrade.UnlockUpgrade();
+        }
+        else
+        {
+            upgrade.UpgradeLevel();
+        }
 
         // Đóng panel và tiếp tục game
         upgradePanel.SetActive(false);

@@ -23,9 +23,6 @@ public class PlayerManager : MonoBehaviour
         }
 
         Instance = this;
-
-        // Tìm player ngay từ đầu
-        FindPlayer();
     }
 
     private void FindPlayer()

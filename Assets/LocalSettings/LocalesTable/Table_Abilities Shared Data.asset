@@ -14,7 +14,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
   m_TableCollectionName: Table_Abilities
   m_TableCollectionNameGuidString: 420403c358b9c6e4ea45e96a448f7958
-  m_Entries: []
+  m_Entries:
+  - m_Id: 6794990916964352
+    m_Key: UPGRADE_ARMOR_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795035695353856
+    m_Key: UPGRADE_MAX_HP_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795067844694016
+    m_Key: UPGRADE_DAMAGE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795085020368896
+    m_Key: UPGRADE_CRIT_CHANCE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795107711553536
+    m_Key: UPGRADE_CRIT_DAMAGE_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795123775737856
+    m_Key: UPGRADE_EXP_GAIN_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795142197121024
+    m_Key: UPGRADE_COIN_GAIN_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795156793298944
+    m_Key: UPGRADE_SPEED_NAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798577504063488
+    m_Key: UPGRADE_ARMOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798627324006400
+    m_Key: UPGRADE_MAX_HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798674937745408
+    m_Key: UPGRADE_DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798720135565312
+    m_Key: UPGRADE_CRIT_CHANCE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798766709116928
+    m_Key: UPGRADE_CRIT_DAMAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798859524870144
+    m_Key: UPGRADE_COIN_BOOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798893309988864
+    m_Key: UPGRADE_EXP_BOOST
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798939514441728
+    m_Key: UPGRADE_SPEED
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
