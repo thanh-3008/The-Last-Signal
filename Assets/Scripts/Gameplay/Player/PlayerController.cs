@@ -10,7 +10,7 @@ public class PlayerController : Entity
     [SerializeField]
     private PlayerData playerData;
     private PlayerData runtimeData;
-    public PlayerData data => playerData;
+    public PlayerData data => runtimeData;
 
     public Animator animator { get; private set; }
 
