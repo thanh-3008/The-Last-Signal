@@ -82,6 +82,50 @@ MonoBehaviour:
     m_Localized: Improves movement speed for better dodging.
     m_Metadata:
       m_Items: []
+  - m_Id: 8004213323567104
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004308639125504
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004423630163968
+    m_Localized: Damage base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004571466797056
+    m_Localized: Speed Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004639787814912
+    m_Localized: Crit Rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004686529138688
+    m_Localized: Crit Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004797594308608
+    m_Localized: Exp Gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004841953267712
+    m_Localized: Coin Gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042439467831296
+    m_Localized: Current Stat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042906717491200
+    m_Localized: Upgrade Stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042984886734848
+    m_Localized: Upgrade Skills
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

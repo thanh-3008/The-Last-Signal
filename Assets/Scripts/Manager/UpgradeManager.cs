@@ -19,10 +19,6 @@ public class UpgradeManager : MonoBehaviour
         }
         Instance = this;
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L)) { { ShowUpgradeSelection(); } }
-    }
 
     // Hàm logic chính để lấy và hiển thị 3 upgrade
     public void ShowUpgradeSelection()

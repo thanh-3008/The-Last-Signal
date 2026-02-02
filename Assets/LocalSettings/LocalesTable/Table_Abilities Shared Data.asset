@@ -79,6 +79,50 @@ MonoBehaviour:
     m_Key: UPGRADE_SPEED
     m_Metadata:
       m_Items: []
+  - m_Id: 8004213323567104
+    m_Key: stat_health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004308639125504
+    m_Key: stat_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004423630163968
+    m_Key: stat_attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004571466797056
+    m_Key: stat_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004639787814912
+    m_Key: stat_crit_rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004686529138688
+    m_Key: stat_crit_dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004797594308608
+    m_Key: stat_exp_gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004841953267712
+    m_Key: stat_coin_gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042439467831296
+    m_Key: Name_Current_Stat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042906717491200
+    m_Key: Name_Upgrade_Stat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042984886734848
+    m_Key: Name_Upgrade_Skill
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

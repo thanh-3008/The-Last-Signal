@@ -11,7 +11,6 @@ public class PlayerManager : MonoBehaviour
     private PlayerController playerController;
     public PlayerController Player => playerController;
 
-    public PlayerController playerctl;
     private void Awake()
     {
         // Kh?i t?o Singleton
