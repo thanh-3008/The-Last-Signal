@@ -14,23 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeDameBaseData
   nameUpgrade:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:420403c358b9c6e4ea45e96a448f7958
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6795067844694016
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   desUpgrade:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:420403c358b9c6e4ea45e96a448f7958
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6798674937745408
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  imgUpgrade: {fileID: 0}
+  imgUpgrade: {fileID: 743717084533177668, guid: 33574b56d6a69ba47a8d9d1791ac8047,
+    type: 3}
   UltimateUpgrade: {fileID: 0}
   type: 0
   dame: 0

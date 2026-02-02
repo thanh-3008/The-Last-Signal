@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class GameTimeManager : MonoBehaviour
 {
-    // Tạo Singleton để dễ gọi từ các script khác (Player, UI)
     public static GameTimeManager Instance { get; private set; }
 
     [Header("Debug Status")]
@@ -12,50 +11,54 @@ public class GameTimeManager : MonoBehaviour
 
     private void Awake()
     {
-        // Setup Singleton
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
-    // Hàm gọi khi nhân vật Chết/Hồi sinh
+    // 1. Khi Player Chết: Chờ 1s rồi mới dừng
     public void SetPlayerDead(bool isDead)
     {
         isPlayerDead = isDead;
-        StartCheckTimeScale();
+        if (isPlayerDead)
+        {
+            StartCoroutine(DelayTimeScale(0f, 1f)); // Delay 1s rồi set TimeScale = 0
+        }
+        else
+        {
+            // Nếu hồi sinh, thường ta muốn game chạy lại ngay hoặc có delay tùy bạn
+            Time.timeScale = 1f;
+        }
     }
 
-    // Hàm gọi khi Bật/Tắt Pause menu
+    // 2. Khi Pause/Resume
     public void SetGamePaused(bool isPaused)
     {
         isGamePaused = isPaused;
-        StartCheckTimeScale();
-    }
+        StopAllCoroutines(); // Dừng các lệnh delay trước đó để tránh xung đột
 
-    private void StartCheckTimeScale()
-    {
-        StopAllCoroutines();
-        StartCoroutine(CheckTimeScale());
-    }
-
-    // Hàm logic trung tâm để quyết định TimeScale
-    private IEnumerator CheckTimeScale()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        // Nếu (Nhân vật chết) HOẶC (Game đang Pause) -> Dừng game
-        if (isPlayerDead || isGamePaused)
+        if (isGamePaused)
         {
+            // Pause ngay lập tức
             Time.timeScale = 0f;
         }
         else
         {
-            // Chỉ khi sống VÀ không pause -> Game mới chạy
-            Time.timeScale = 1f;
+            // Nếu không chết thì mới cho phép Resume kèm delay
+            if (!isPlayerDead)
+            {
+                StartCoroutine(DelayTimeScale(1f, 1f)); // Delay 1s rồi set TimeScale = 1
+            }
         }
+    }
+
+    // Hàm bổ trợ xử lý delay
+    private IEnumerator DelayTimeScale(float targetScale, float delay)
+    {
+        // Sử dụng WaitForSecondsRealtime vì khi Time.timeScale = 0, 
+        // WaitForSeconds thường sẽ bị đứng im.
+        yield return new WaitForSecondsRealtime(delay);
+
+        // Kiểm tra lại điều kiện một lần nữa trước khi thực hiện để tránh lỗi logic
+        Time.timeScale = targetScale;
     }
 }

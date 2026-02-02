@@ -1,8 +1,8 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 /// <summary>
-/// Singleton manager ?? cung c?p reference t?i PlayerController cho toàn b? game.
-/// Tìm player m?t l?n duy nh?t ngay t? ??u game và cache reference.
+/// Singleton manager ?? cung c?p reference t?i PlayerController cho toÃ n b? game.
+/// TÃ¬m player m?t l?n duy nh?t ngay t? ??u game vÃ  cache reference.
 /// </summary>
 public class PlayerManager : MonoBehaviour
 {
@@ -16,46 +16,39 @@ public class PlayerManager : MonoBehaviour
         // Kh?i t?o Singleton
         if (Instance != null && Instance != this)
         {
-            Debug.LogWarning("PlayerManager: Có nhi?u instance c?a PlayerManager. Xoá instance d? th?a.");
+            Debug.LogWarning("PlayerManager: CÃ³ nhi?u instance c?a PlayerManager. XoÃ¡ instance d? th?a.");
             Destroy(gameObject);
             return;
         }
 
         Instance = this;
-
-        // Tìm player ngay t? ??u
-        FindPlayer();
     }
 
     private void FindPlayer()
     {
-        // Cách 1: Tìm theo tag "Player"
+        // CÃ¡ch 1: TÃ¬m theo tag "Player"
         GameObject playerObj = GameObject.FindWithTag("Player");
         if (playerObj != null)
         {
             playerController = playerObj.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                Debug.Log("PlayerManager: Tìm th?y Player qua tag.");
+                Debug.Log("PlayerManager: TÃ¬m th?y Player qua tag.");
                 return;
             }
         }
 
-        // Cách 2: N?u không tìm ???c theo tag, tìm component PlayerController trong scene
+        // CÃ¡ch 2: N?u khÃ´ng tÃ¬m Ä‘Æ°á»£c theo tag, tÃ¬m component PlayerController trong scene
         playerController = FindFirstObjectByType<PlayerController>();
         if (playerController != null)
         {
-            Debug.Log("PlayerManager: Tìm th?y Player qua FindFirstObjectByType.");
+            Debug.Log("PlayerManager: TÃ¬m th?y Player qua FindFirstObjectByType.");
             return;
         }
 
-        // Không tìm ???c player
-        Debug.LogError("PlayerManager: Không tìm th?y PlayerController trong scene!");
+        // KhÃ´ng tÃ¬m ???c player
+        Debug.LogError("PlayerManager: KhÃ´ng tÃ¬m tháº¥y PlayerController trong scene!");
     }
-
-    /// <summary>
-    /// L?y PlayerController. N?u null, c? g?ng tìm l?i.
-    /// </summary>
     public PlayerController GetPlayer()
     {
         if (playerController == null)
@@ -66,7 +59,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Ki?m tra xem Player có t?n t?i không.
+    /// Ki?m tra xem Player cÃ³ t?n t?i khÃ´ng.
     /// </summary>
     public bool HasPlayer()
     {

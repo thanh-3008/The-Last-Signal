@@ -14,23 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeExpGainData
   nameUpgrade:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:420403c358b9c6e4ea45e96a448f7958
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6795123775737856
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   desUpgrade:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:420403c358b9c6e4ea45e96a448f7958
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 6798893309988864
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  imgUpgrade: {fileID: 0}
+  imgUpgrade: {fileID: -8140245965472925413, guid: a747ccc26d86a2a45843334edfede059,
+    type: 3}
   UltimateUpgrade: {fileID: 0}
   type: 0
   expGain: 0

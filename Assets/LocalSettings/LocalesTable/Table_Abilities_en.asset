@@ -17,7 +17,115 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 420403c358b9c6e4ea45e96a448f7958, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 6794990916964352
+    m_Localized: Armor Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795035695353856
+    m_Localized: Max HP Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795067844694016
+    m_Localized: Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795085020368896
+    m_Localized: Crit Rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795107711553536
+    m_Localized: Crit Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795123775737856
+    m_Localized: EXP Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795142197121024
+    m_Localized: Gold Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6795156793298944
+    m_Localized: Speed Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798577504063488
+    m_Localized: Increases defense, reducing damage taken from enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798627324006400
+    m_Localized: Expands your maximum health capacity.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798674937745408
+    m_Localized: Boosts the power of all basic attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798720135565312
+    m_Localized: Increases the probability of landing a critical strike.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798766709116928
+    m_Localized: Makes your critical strikes significantly more powerful.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798859524870144
+    m_Localized: Boosts the amount of gold dropped by enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798893309988864
+    m_Localized: Increases experience points gained to level up faster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798939514441728
+    m_Localized: Improves movement speed for better dodging.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004213323567104
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004308639125504
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004423630163968
+    m_Localized: Damage base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004571466797056
+    m_Localized: Speed Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004639787814912
+    m_Localized: Crit Rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004686529138688
+    m_Localized: Crit Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004797594308608
+    m_Localized: Exp Gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8004841953267712
+    m_Localized: Coin Gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042439467831296
+    m_Localized: Current Stat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042906717491200
+    m_Localized: Upgrade Stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8042984886734848
+    m_Localized: Upgrade Skills
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

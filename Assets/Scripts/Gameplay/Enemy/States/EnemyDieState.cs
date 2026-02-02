@@ -30,7 +30,6 @@ public class EnemyDieState : BaseStateEnemy
 
         if (dieTimer <= 0 && counter==0)
         {
-            Debug.Log("Return to pool  1111111111111");
             ObjectPooler.Instance.ReturnToPool(enemy.data.enemyTag, enemy.gameObject);
             counter = 1;
         }
