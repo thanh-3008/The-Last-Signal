@@ -11,11 +11,13 @@
 
         public override void UnlockUpgrade()
         {
+            GetPlayerController();
             player.data.moveSpeed += speed;
         }
 
         public override void UpgradeLevel()
         {
+            GetPlayerController();
             player.data.moveSpeed += speed;
         }
     }

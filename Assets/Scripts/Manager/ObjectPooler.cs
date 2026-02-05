@@ -62,9 +62,11 @@ public class ObjectPooler : MonoBehaviour
 
     public void ReturnToPool(string tag, GameObject obj)
     {
-        if (!poolDictionary.ContainsKey(tag)) return;
-
-        obj.SetActive(false);
-        poolDictionary[tag].Enqueue(obj);
+        if (!poolDictionary.ContainsKey(tag)) Debug.LogError("Khong ton tai tag de tra ");
+        else
+        {
+            obj.SetActive(false);
+            poolDictionary[tag].Enqueue(obj);
+        }
     }
 }

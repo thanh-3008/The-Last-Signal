@@ -9,7 +9,7 @@ public class DamagePopupManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject pfDamagePopup; // Kéo Prefab vào đây
     [SerializeField]
-    private string tag;
+    public string tag;
     [SerializeField]
     private int size;
     private void Awake()

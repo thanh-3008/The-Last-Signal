@@ -15,5 +15,9 @@ public class GameManager : MonoBehaviour
             isPause = !isPause;
             GameTimeManager.Instance.SetGamePaused(isPause);
         }
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            UpgradeManager.Instance.ShowUpgradeSelection();
+        }
     }
 }

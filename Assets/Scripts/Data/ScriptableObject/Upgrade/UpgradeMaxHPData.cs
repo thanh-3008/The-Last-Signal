@@ -1,20 +1,39 @@
-using UnityEngine;
+﻿using UnityEngine;
+
 [CreateAssetMenu(fileName = "NewUpgradeData", menuName = "GameData/UpgradeData/UpgradeMaxHPData")]
 public class UpgradeMaxHP : UpgradeData
 {
     public float maxHP;
-    public override void ChangeUpgradeUltimate()
-    {
-        throw new System.NotImplementedException();
-    }
 
     public override void UnlockUpgrade()
     {
-        player.data.maxHealth += maxHP;
+        ApplyHealthUpgrade();
     }
 
     public override void UpgradeLevel()
     {
-        player.data.maxHealth += maxHP;
+        ApplyHealthUpgrade();
+    }
+
+    private void ApplyHealthUpgrade()
+    {
+        GetPlayerController(); // Giả định hàm này gán biến 'player' trong lớp cha UpgradeData
+
+        if (player != null)
+        {
+            player.data.maxHealth += maxHP;
+
+            player.maxHealth = player.data.maxHealth;
+
+            player.currentHealth += maxHP;
+            player.currentHealth = Mathf.Clamp(player.currentHealth, 0, player.maxHealth);
+
+            player.CallOnHealthChanged();
+        }
+    }
+
+    public override void ChangeUpgradeUltimate()
+    {
+        // Logic cho chiêu cuối nếu có
     }
 }

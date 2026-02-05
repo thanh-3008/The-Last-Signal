@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public float timeSpawn;
     public float time = 2f;
     public List<EnemyData> enemies;
+    public List<GameObject> listGems;
 
     private void Awake()
     {
@@ -65,6 +66,13 @@ public class EnemySpawner : MonoBehaviour
             if (enemies[i] != null)
             {
                 ObjectPooler.Instance.InitializePool(enemies[i].enemyTag, enemies[i].prefabEnemy, 20);
+            }
+        }
+        for(int i = 0; i < listGems.Count; i++)
+        {
+            if (listGems[i] != null)
+            {
+                ObjectPooler.Instance.InitializePool(listGems[i].GetComponent<ExperienceGem>().tagGem, listGems[i], 20);
             }
         }
     }

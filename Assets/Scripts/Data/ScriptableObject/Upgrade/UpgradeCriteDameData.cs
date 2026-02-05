@@ -10,23 +10,13 @@ public class UpgradeCriteDameData : UpgradeData
 
     public override void UnlockUpgrade()
     {
+        GetPlayerController();
         player.data.critDame += critDame;
     }
 
     public override void UpgradeLevel()
     {
+        GetPlayerController();
         player.data.critDame += critDame;
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

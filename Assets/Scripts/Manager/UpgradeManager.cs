@@ -35,8 +35,7 @@ public class UpgradeManager : MonoBehaviour
         upgradePanel.SetActive(true);
         upgradeUI.SetUp(randomUpgrades);
 
-        // Dừng thời gian game nếu cần
-        Time.timeScale = 0;
+        GameTimeManager.Instance.SetGamePaused(true);
     }
 
     public void ApplyUpgrade(UpgradeData upgrade)
@@ -46,15 +45,15 @@ public class UpgradeManager : MonoBehaviour
 
         if (ownedUpgrades.ContainsKey(upgrade))
         {
-            upgrade.UnlockUpgrade();
+            upgrade.UpgradeLevel();
         }
         else
-        {
-            upgrade.UpgradeLevel();
+        {            
+            upgrade.UnlockUpgrade();
         }
 
         // Đóng panel và tiếp tục game
         upgradePanel.SetActive(false);
-        Time.timeScale = 1;
+        GameTimeManager.Instance.SetGamePaused(false);
     }
 }

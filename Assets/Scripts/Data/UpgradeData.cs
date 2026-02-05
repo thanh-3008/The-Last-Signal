@@ -18,6 +18,7 @@ public abstract class UpgradeData : ScriptableObject
     public abstract void UnlockUpgrade();
     public abstract void UpgradeLevel();
     public  abstract void ChangeUpgradeUltimate();
+
     protected void GetPlayerController()
     {
         player = PlayerManager.Instance.GetPlayer();

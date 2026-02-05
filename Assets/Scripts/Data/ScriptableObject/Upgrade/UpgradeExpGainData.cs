@@ -10,11 +10,13 @@ public class UpgradeExpGainData : UpgradeData
 
     public override void UnlockUpgrade()
     {
+        GetPlayerController();
         player.data.expGain += expGain;
     }
 
     public override void UpgradeLevel()
     {
+        GetPlayerController();
         player.data.expGain += expGain;
     }
 
