@@ -41,5 +41,9 @@ public abstract class Entity : MonoBehaviour
         return finalDamage;
     }
     protected abstract void Die();
+    public void CallOnHealthChanged()
+    {
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+    }
 
 }

@@ -60,7 +60,7 @@ MonoBehaviour:
   critDame: 160
   expGain: 2
   coinGain: 1
-  pickupRange: 5.5
+  pickupRange: 3.3
   references:
     version: 2
     RefIds: []

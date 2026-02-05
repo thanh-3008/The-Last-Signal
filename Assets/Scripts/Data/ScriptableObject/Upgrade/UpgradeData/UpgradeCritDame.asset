@@ -34,7 +34,7 @@ MonoBehaviour:
     type: 3}
   UltimateUpgrade: {fileID: 0}
   type: 0
-  critDame: 0
+  critDame: 20
   references:
     version: 2
     RefIds: []

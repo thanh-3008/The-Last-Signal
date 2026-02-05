@@ -34,7 +34,7 @@ MonoBehaviour:
     type: 3}
   UltimateUpgrade: {fileID: 0}
   type: 0
-  expGain: 0
+  expGain: 0.2
   references:
     version: 2
     RefIds: []

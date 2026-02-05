@@ -10,11 +10,13 @@ public class UpgradeCritChance : UpgradeData
 
     public override void UnlockUpgrade()
     {
+        GetPlayerController();
         player.data.critChance += critChance;
     }
 
     public override void UpgradeLevel()
     {
+        GetPlayerController();
         player.data.critChance += critChance;
     }
 

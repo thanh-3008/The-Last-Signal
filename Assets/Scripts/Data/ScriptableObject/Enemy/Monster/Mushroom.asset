@@ -30,6 +30,11 @@ MonoBehaviour:
   prefabEnemy: {fileID: 44598555773644409, guid: 24ffe5a45fc951645a83baf938614fbd,
     type: 3}
   enemyTag: Mushroom
+  expDrops:
+  - gemPrefab: {fileID: 5499789809143015255, guid: ff9c376d8f3479d4abb5f5a65a65a954,
+      type: 3}
+    amount: 1
+  coinDrop: 0
   references:
     version: 2
     RefIds: []

@@ -10,11 +10,13 @@ public class UpgradeCoinGainData : UpgradeData
 
     public override void UnlockUpgrade()
     {
+        GetPlayerController();
         player.data.coinGain += coinGain;
     }
 
     public override void UpgradeLevel()
     {
+        GetPlayerController();
         player.data.coinGain += coinGain;
     }
 

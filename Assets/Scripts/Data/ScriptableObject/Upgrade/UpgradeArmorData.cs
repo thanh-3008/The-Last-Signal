@@ -11,11 +11,13 @@ public class UpgradeArmorData : UpgradeData
 
     public override void UnlockUpgrade()
     {
+        GetPlayerController();
         player.data.armor += armor;
     }
 
     public override void UpgradeLevel()
     {
+        GetPlayerController();
         player.data.armor += armor;
     }
 

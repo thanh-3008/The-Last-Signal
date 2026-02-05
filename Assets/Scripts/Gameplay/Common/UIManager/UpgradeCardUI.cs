@@ -21,11 +21,23 @@ public class UpgradeCardUI : MonoBehaviour
     public Image image2;
     public Image image3;
 
+    public Button bt1;
+    public Button bt2;
+    public Button bt3;
+
     public void SetUp(List<UpgradeData> upgradeDatas)
     {
         SetPanelData(panel1, textName1, textDes1, image1, upgradeDatas[0]);
+        bt1.onClick.RemoveAllListeners();
+        bt1.onClick.AddListener(()=> OnClickUpgradeSelected(upgradeDatas[0]));
+
         SetPanelData(panel2, textName2, textDes2, image2, upgradeDatas[1]);
+        bt2.onClick.RemoveAllListeners();
+        bt2.onClick.AddListener(() => OnClickUpgradeSelected(upgradeDatas[1]));
+
         SetPanelData(panel3, textName3, textDes3, image3, upgradeDatas[2]);
+        bt3.onClick.RemoveAllListeners();
+        bt3.onClick.AddListener(() => OnClickUpgradeSelected(upgradeDatas[2]));
     }
 
     private void SetPanelData(GameObject panel, TextMeshProUGUI nameTxt, TextMeshProUGUI desTxt, Image iconImg, UpgradeData data)
@@ -64,5 +76,9 @@ public class UpgradeCardUI : MonoBehaviour
         {
             panelBg.color = customColor;
         }
+    }
+    public void OnClickUpgradeSelected(UpgradeData updradeData)
+    {
+        UpgradeManager.Instance.ApplyUpgrade(updradeData);
     }
 }
